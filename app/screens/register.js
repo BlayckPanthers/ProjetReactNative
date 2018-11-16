@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 
 const BackgroundView = styled.View`
-    flex: 1;
+flex: 1;
 `
 
 const CenterView = styled.View`
