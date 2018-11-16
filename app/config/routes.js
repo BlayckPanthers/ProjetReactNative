@@ -27,7 +27,7 @@ const LoginStack = StackNavigator({
   Register: {
     screen: Register,
     navigationOptions: {
-      header: () => null
+      headerTitle: 'Register'
     }
   },
   Evenement: {

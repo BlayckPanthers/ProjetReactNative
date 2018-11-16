@@ -29,7 +29,7 @@ class Home extends Component {
     }
 
     handleEventButtonPress = () => {
-        this.props.navigation.navigate('Event')
+        this.props.navigation.navigate('Evenement')
     }
 
     handleJeuxButtonPress = () => {
