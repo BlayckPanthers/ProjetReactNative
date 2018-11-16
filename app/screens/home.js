@@ -23,10 +23,7 @@ class Home extends Component {
         navigation: PropTypes.object
     }
 
-    // Navigate to Register
-    handleRegisterButtonPress = () => {
-        this.props.navigation.navigate('Register')
-    }
+    
 
     handleEventButtonPress = () => {
         this.props.navigation.navigate('Evenement')

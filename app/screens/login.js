@@ -11,11 +11,11 @@ height: 40;
 borderColor: black;
 borderRadius:10;
 borderWidth: 1;
-fontSize: 20;
 `
 const TouchableText = styled.Text `
 textAlign: center;
 marginTop: 10;
+fontSize: 13;
 `
 
 
@@ -36,8 +36,10 @@ marginBottom: 7;
 height: 40;
 borderRadius: 5;
 borderWidth: 3;
-fontSize: 20;
+fontSize: 13;
 `
+
+const RegisterLinkTouchable = styled.TouchableOpacity ``
 
 
 // create a component
@@ -58,6 +60,11 @@ class Login extends Component {
 
     onChangePassWordInput = password => {
         this.setState({password : password })
+    }
+
+    // Navigate to Register
+    handleRegisterButtonPress = () => {
+        this.props.navigation.navigate('Register')
     }
 
     handleHomeButtonPress = () => {
@@ -87,6 +94,9 @@ class Login extends Component {
                     <ButtonTouchableOpacity onPress={this.handleLoginButton}title="Submit">
                         <TouchableText>Submit</TouchableText>
                     </ButtonTouchableOpacity>
+                    <RegisterLinkTouchable onPress={this.handleRegisterButtonPress}>
+                        <Text>Pas de compte ? Inscrivez-vous ici !</Text>
+                    </RegisterLinkTouchable>
                 </CenterView>
             </BackgroundView>
         )
