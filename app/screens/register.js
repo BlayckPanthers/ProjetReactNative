@@ -1,19 +1,11 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text } from 'react-native'
-import styled from 'styled-components'
+import { Text, Alert } from 'react-native'
 import PropTypes from 'prop-types'
 
-
-const BackgroundView = styled.View`
-flex: 1;
-`
-
-const CenterView = styled.View`
-flex: 5;
-justify-content: center;
-align-items: center;
-`
+import { BackgroundView, CenterView
+    , InputTextStyled , ButtonTouchableOpacity, TouchableText } from '../static/customStyle/formStyled'
+import {verifyMail} from '../config/tools'
 
 
 // create a component
@@ -22,11 +14,64 @@ class Register extends Component {
         navigation: PropTypes.object
     }
 
+    state = {
+        username: '',
+        password: '',
+        confirmpassword: '',
+        mail: '',
+    }
+
+    onChangeMailInput = mail => {
+        this.setState({mail: mail})
+    }
+    onChangeUserNameInput = username => {
+        this.setState({username: username})
+    }
+    onChangePassWordInput = password => {
+        this.setState({password: password})
+    }
+    onChangeConfirmPassWordInput = confirmpassword => {
+        this.setState({confirmpassword: confirmpassword})
+    }
+
+    handleRegisterButton = () => {
+        const username = this.state.username
+        const mail = this.state.mail
+        const password = this.state.password
+        const confirmPsw = this.state.confirmpassword
+
+        
+
+        if(username !== '' && mail !== '' && password != '' && confirmPsw !== ''){
+            if(!verifyMail(mail)){
+                console.log('Nah good')
+            }
+            if (password !== confirmPsw) {
+                console.log('Nah good PSWD different')
+            }
+            else {
+                console.log('Go to next step')
+                console.log(this.state)
+            }
+        }
+        else {
+            Alert.alert('Error', 'Please fill all the fields')
+        }
+
+    }
+
     render() {
         return (
             <BackgroundView>
                 <CenterView>
                     <Text>Register</Text>
+                    <InputTextStyled placeholder='Email' onChangeText={email => this.onChangeMailInput(email)}/>
+                    <InputTextStyled placeholder='Username' onChangeText={username => this.onChangeUserNameInput(username)}/>
+                    <InputTextStyled secureTextEntry={true} placeholder='Password' onChangeText={password => this.onChangePassWordInput(password)}/>
+                    <InputTextStyled secureTextEntry={true} placeholder='Confirm Password' onChangeText={cpassword => this.onChangeConfirmPassWordInput(cpassword)}/>
+                    <ButtonTouchableOpacity onPress={this.handleRegisterButton}>
+                        <TouchableText>Register</TouchableText>
+                    </ButtonTouchableOpacity>
                 </CenterView>
             </BackgroundView>
         )

@@ -1,43 +1,14 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text, View, Alert } from 'react-native'
+import { Text, Alert } from 'react-native'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
-const ButtonTouchableOpacity = styled.TouchableOpacity `
-width: 50%;
-marginBottom: 10;
-height: 40;
-borderColor: black;
-borderRadius:10;
-borderWidth: 1;
-`
-const TouchableText = styled.Text `
-textAlign: center;
-marginTop: 10;
-fontSize: 13;
-`
+import { BackgroundView, CenterView, 
+    ButtonTouchableOpacity, TouchableText, 
+    InputTextStyled } from '../static/customStyle/formStyled'
 
 
-const BackgroundView = styled.View`
-flex: 1;
-`
-
-const CenterView = styled.View`
-flex: 5;
-justify-content: center;
-align-items: center;
-`
-
-const InputLogin = styled.TextInput `
-textAlign: center;
-width: 50%;
-marginBottom: 7;
-height: 40;
-borderRadius: 5;
-borderWidth: 3;
-fontSize: 13;
-`
 
 const RegisterLinkTouchable = styled.TouchableOpacity ``
 
@@ -63,7 +34,7 @@ class Login extends Component {
     }
 
     // Navigate to Register
-    handleRegisterButtonPress = () => {
+    handleRegisterLinkButton = () => {
         this.props.navigation.navigate('Register')
     }
 
@@ -89,12 +60,12 @@ class Login extends Component {
                         <Text>Go Home</Text>
                     </ParameterTouchableOpacity> */}
 
-                    <InputLogin placeholder='Username' onChangeText={username => this.onChangeUserNameInput(username)}/>
-                    <InputLogin secureTextEntry={true} placeholder='Password' onChangeText={password => this.onChangePassWordInput(password)}/>
+                    <InputTextStyled placeholder='Username' onChangeText={username => this.onChangeUserNameInput(username)}/>
+                    <InputTextStyled secureTextEntry={true} placeholder='Password' onChangeText={password => this.onChangePassWordInput(password)}/>
                     <ButtonTouchableOpacity onPress={this.handleLoginButton}title="Submit">
                         <TouchableText>Submit</TouchableText>
                     </ButtonTouchableOpacity>
-                    <RegisterLinkTouchable onPress={this.handleRegisterButtonPress}>
+                    <RegisterLinkTouchable onPress={this.handleRegisterLinkButton}>
                         <Text>Pas de compte ? Inscrivez-vous ici !</Text>
                     </RegisterLinkTouchable>
                 </CenterView>
