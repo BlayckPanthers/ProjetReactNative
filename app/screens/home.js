@@ -10,7 +10,7 @@ const ParameterTouchableOpacity = styled.TouchableOpacity ``
 
 
 // create a component
-class Home extends Component {
+class HomeScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
@@ -45,4 +45,4 @@ class Home extends Component {
 }
 
 //make this component available to the app
-export default Home
+export default HomeScreen

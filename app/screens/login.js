@@ -15,7 +15,7 @@ const RegisterLinkTouchable = styled.TouchableOpacity ``
 
 
 // create a component
-class Login extends Component {
+class LoginScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
@@ -46,18 +46,18 @@ class Login extends Component {
     handleLoginButton = () => {
         const mail = this.state.mail
         const password = this.state.password
-        if(mail !== '' && !password !== ''){
-            if(!verifyMail(mail)){
-                console.log('Nah good')
-            }
-            else {
-                console.log('Go to next step')
-                console.log(this.state)
-                this.props.navigation.navigate('HomeNav')
-            }
-        }else {
-            Alert.alert('Error', 'Error: Invalid password and mail')
-        }
+        // if(mail !== '' && !password !== ''){
+        //     if(!verifyMail(mail)){
+        //         console.log('Nah good')
+        //     }
+        //     else {
+        //         console.log('Go to next step')
+        //         console.log(this.state)
+        //     }
+        // }else {
+        //     Alert.alert('Error', 'Error: Invalid password and mail')
+        // }
+       this.props.navigation.navigate('HomeNav')
     }
 
     render() {
@@ -92,4 +92,4 @@ class Login extends Component {
 
 
 //make this component available to the app
-export default Login
+export default LoginScreen

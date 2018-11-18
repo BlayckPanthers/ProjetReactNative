@@ -7,7 +7,7 @@ import { BackgroundView, CenterView } from '../static/customStyle/formStyled'
 
 
 // create a component
-class Evenement extends Component {
+class EvenementScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
@@ -23,4 +23,4 @@ class Evenement extends Component {
 }
 
 //make this component available to the app
-export default Evenement
+export default EvenementScreen

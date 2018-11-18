@@ -9,7 +9,7 @@ import {verifyMail} from '../config/tools'
 
 
 // create a component
-class Register extends Component {
+class RegisterScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
@@ -78,4 +78,4 @@ class Register extends Component {
 }
 
 //make this component available to the app
-export default Register
+export default RegisterScreen

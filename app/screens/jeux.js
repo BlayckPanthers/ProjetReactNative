@@ -1,26 +1,23 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text } from 'react-native'
 import PropTypes from 'prop-types'
-import { BackgroundView, CenterView } from '../static/customStyle/formStyled'
-
+import { BackgroundView } from '../static/customStyle/formStyled'
+import Jeux from '../components/jeux'
 
 
 // create a component
-class Jeux extends Component {
+class JeuxScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
     render() {
         return (
             <BackgroundView>
-                <CenterView>
-                    <Text>Jeux</Text>
-                </CenterView>
+                <Jeux/>
             </BackgroundView>
         )
     }
 }
 
 //make this component available to the app
-export default Jeux
+export default JeuxScreen
