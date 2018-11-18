@@ -15,14 +15,15 @@ import LolImage from '../static/images/lol.jpg'
 // create a component
 class EvenementScreen extends Component {
     static propTypes = {
-        navigation: PropTypes.object
+        navigation: PropTypes.object,
+        maxNumber: PropTypes.number
     }
 
     state = {
         gameName: '',
         date: '',
         eventName: '',
-        maxNumber: '',
+        maxNumber: 0,
         visible: false
     }
 
@@ -40,12 +41,11 @@ class EvenementScreen extends Component {
     }
 
     handleCreateEventButton = () => {
-        const gameName = this.state.gameName
         const date = this.state.date
         const maxNumber = this.state.maxNumber
         const eventName = this.state.eventName
 
-        if(gameName == '' || date == ''|| maxNumber == '' || eventName == '' ){
+        if(date == ''|| maxNumber == 0 || eventName == '' ){
             Alert.alert('Error', 'Please fill all the fields')
         }
         else {
@@ -53,7 +53,6 @@ class EvenementScreen extends Component {
             console.log(this.state)
             this.setState({ visible: false })
             this.props.navigation.navigate('Home', {
-                gameName: gameName,
                 date: date,
                 maxNumber: maxNumber,
                 eventName: eventName,
@@ -79,7 +78,6 @@ class EvenementScreen extends Component {
                 >
                     <DialogContent>
                         <Text>Créer un évènement</Text>
-                        <InputTextStyled placeholder='Game name' onChangeText={gameName => this.onChangeGameNameInput(gameName)}/>
                         <InputTextStyled placeholder='Event name' onChangeText={eventName => this.onChangeEventNameInput(eventName)}/>
                         <InputTextStyled placeholder='Player max number' onChangeText={maxNumber => this.onChangeMaxNumberInput(maxNumber)}/>
                         <InputTextStyled placeholder='Date' onChangeText={date => this.onChangeDateInput(date)}/>
