@@ -17,9 +17,9 @@ class HomeScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
+    componentDidUpdate(){
 
-
-    
+    }
 
     handleEventButtonPress = () => {
         this.props.navigation.navigate('Register')
@@ -29,39 +29,35 @@ class HomeScreen extends Component {
         this.props.navigation.navigate('Jeux')
     }
 
-
-
     render() {
         const { navigation } = this.props
-        const date = navigation.getParam('date')
-        const maxNumber = navigation.getParam('maxNumber')
-        const eventName = navigation.getParam('eventName')
+        const date = navigation.getParam('date', '')
+        const maxNumber = navigation.getParam('maxNumber', 0)
+        const eventName = navigation.getParam('eventName', '')
 
-        const renderElement = () => {
-            if (date == '' || maxNumber == 0 || eventName == '' ) {
-               return <Evenement EventName= {eventName} TotalNumberEvent={maxNumber}
-               ActualNumberEvent={5} SourceImage={LolImage}
-               DateEvent= {date} />
- 
-            }
-            return null
-         }
-    
-        return (
-
-            <BackgroundView>
-                <CenterView>
-                { renderElement() }
+        if(date !== '' && maxNumber !== 0 && eventName !== '' ) {
+            return <BackgroundView>
+            <CenterView>
+                <Evenement EventName= {eventName} TotalNumberEvent={maxNumber}
+                    ActualNumberEvent={5} SourceImage={LolImage}
+                    DateEvent= {date} />
                 <Separator/>
-                    <ParameterTouchableOpacity onPress={this.handleEventButtonPress}>
-                        <Text>GO to Event</Text>
-                    </ParameterTouchableOpacity>
-                    <ParameterTouchableOpacity onPress={this.handleJeuxButtonPress}>
-                        <Text>GO to Jeux</Text>
-                    </ParameterTouchableOpacity>
-                </CenterView>
+            </CenterView>
             </BackgroundView>
-        )
+        }else{
+            return (
+                <BackgroundView>
+                    <CenterView>
+                        <ParameterTouchableOpacity onPress={this.handleEventButtonPress}>
+                            <Text>GO to Event</Text>
+                        </ParameterTouchableOpacity>
+                        <ParameterTouchableOpacity onPress={this.handleJeuxButtonPress}>
+                            <Text>GO to Jeux</Text>
+                        </ParameterTouchableOpacity>
+                    </CenterView>
+                </BackgroundView>
+            )
+        }
     }
 }
 
