@@ -52,7 +52,7 @@ class EvenementScreen extends Component {
             console.log('Go to next step')
             console.log(this.state)
             this.setState({ visible: false })
-            this.props.navigation.navigate('Home', {
+            this.props.navigation.navigate('Evenement', {
                 date: date,
                 maxNumber: maxNumber,
                 eventName: eventName,

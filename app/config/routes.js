@@ -47,10 +47,26 @@ export const StackNav =  createStackNavigator(
   optionsGeneral
 )
 
+const EventStack =  createStackNavigator(
+  {
+    EvenementList: {
+      screen: EvenementList,
+      navigationOptions: {
+        header: () => null
+      }
+    },
+    Evenement: {
+      screen: Evenement,
+      navigationOptions: {
+        headerTitle: 'Evenement'
+      }
+    }
+  }
+)
 
 export const BottomNav = createBottomTabNavigator({
     Home: Home,
-    Evenement: EvenementList,
+    Evenement: EventStack,
     Jeux: Jeux
 },  {
         defaultNavigationOptions: ({ navigation }) => ({
