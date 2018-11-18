@@ -15,13 +15,14 @@ class JeuxScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
+
     render() {
         return (
             <BackgroundView>
                 <CenterView>
-                    <Jeux SourceImage={CsgoImage} GameName="CS GO" TotalNumberEvent="20"  />
+                        <Jeux SourceImage={CsgoImage} GameName="CS GO" TotalNumberEvent={20} OnClick={1}/>
                     <Separator/>
-                    <Jeux SourceImage={LolImage} GameName="LOL" TotalNumberEvent="8"  />
+                        <Jeux SourceImage={LolImage} GameName="LOL" TotalNumberEvent={8} OnClick={2}/>
                 </CenterView>
             </BackgroundView>
         )

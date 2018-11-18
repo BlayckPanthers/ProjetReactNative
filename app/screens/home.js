@@ -19,7 +19,7 @@ class HomeScreen extends Component {
     
 
     handleEventButtonPress = () => {
-        this.props.navigation.navigate('Evenement')
+        this.props.navigation.navigate('Register')
     }
 
     handleJeuxButtonPress = () => {

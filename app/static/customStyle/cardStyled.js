@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 export const GameName = styled.Text `
-height: 10%; 
+height: 15%; 
 color: white;
 fontWeight: bold;
 backgroundColor: black;

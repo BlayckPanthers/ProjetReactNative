@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react'
-import { View ,ImageBackground } from 'react-native'
+import { View ,ImageBackground, TouchableOpacity } from 'react-native'
 
 import PropTypes from 'proptypes'
 
@@ -12,24 +12,31 @@ class Evenement extends Component {
         EventName: PropTypes.string,
         TotalNumberEvent: PropTypes.number,
         ActualNumberEvent: PropTypes.number,
-        SourceImage: PropTypes.string,
-        DateEvent: PropTypes.string
+        SourceImage: PropTypes.number,
+        DateEvent: PropTypes.string,
+        OnClick: PropTypes.number
+    }
+
+    _handleClick = event => {
+        console.log('event ' + event)
     }
 
     render() {
         return (
             <CardView>
-                <ImageBackground source={this.props.SourceImage} style={{width: '100%', height: '100%'}} >
-                    <View style={{flex:1}}>
-                    <TextViewOnImage>
-                            <GameName style={{height:'30%', }}>{this.props.EventName}</GameName>
-                            <GameName style={{height:'30%'}}>{this.props.ActualNumberEvent}/{this.props.TotalNumberEvent}</GameName>
-                    </TextViewOnImage>
-                    <TextViewOnImageBottom>
-                            <GameName style={{height:'30%',textAlignVertical: 'center',textAlign: 'center'}}>{this.props.DateEvent}</GameName>
-                    </TextViewOnImageBottom>
-                    </View>
-                </ImageBackground>
+                <TouchableOpacity onPress={this._handleClick(this.props.OnClick)}>
+                    <ImageBackground source={this.props.SourceImage} style={{width: '100%', height: '100%'}} >
+                        <View style={{flex:1}}>
+                        <TextViewOnImage>
+                                <GameName style={{height:'30%'}}>{this.props.EventName}</GameName>
+                                <GameName style={{height:'30%'}}>{this.props.ActualNumberEvent}/{this.props.TotalNumberEvent}</GameName>
+                        </TextViewOnImage>
+                        <TextViewOnImageBottom>
+                                <GameName style={{height:'30%',textAlignVertical: 'center',textAlign: 'center'}}>{this.props.DateEvent}</GameName>
+                        </TextViewOnImageBottom>
+                        </View>
+                    </ImageBackground>
+                </TouchableOpacity>
             </CardView>
         )
     }
