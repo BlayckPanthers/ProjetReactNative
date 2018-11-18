@@ -8,8 +8,9 @@ import Login from '../screens/login'
 import HomeNav from '../components/navComponent'
 import Register from '../screens/register'
 import Home from '../screens/home'
-import Evenement from '../screens/evenement'
+import EvenementList from '../screens/evenementList'
 import Jeux from '../screens/jeux'
+import Evenement from '../screens/evenement'
 
 const optionsGeneral = {
   mode: 'modal',
@@ -49,7 +50,7 @@ export const StackNav =  createStackNavigator(
 
 export const BottomNav = createBottomTabNavigator({
     Home: Home,
-    Evenement: Evenement,
+    Evenement: EvenementList,
     Jeux: Jeux
 },  {
         defaultNavigationOptions: ({ navigation }) => ({
@@ -59,7 +60,7 @@ export const BottomNav = createBottomTabNavigator({
                 console.log('home')
                 if (routeName === 'Home') {
                   iconName = `ios-information-circle${focused ? '' : '-outline'}`
-                } else if (routeName === 'Evenement') {
+                } else if (routeName === 'EvenementList') {
                   console.log('Event')
                   iconName = `ios-options${focused ? '' : '-outline'}`
                 } else if (routeName === 'Jeux'){

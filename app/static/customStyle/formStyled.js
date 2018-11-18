@@ -3,6 +3,12 @@ import styled from 'styled-components'
 export const Separator =  styled.View`
 marginTop: 10px;
 `
+export const AddButton = styled.TouchableOpacity`
+flexDirection: row;
+justifyContent: flex-end;
+margin-top: 5px;
+margin-right: 5px;
+`
 
 export const BackgroundView = styled.View`
 flex: 1;

@@ -15,6 +15,7 @@ class HomeScreen extends Component {
         navigation: PropTypes.object
     }
 
+
     
 
     handleEventButtonPress = () => {
@@ -28,10 +29,16 @@ class HomeScreen extends Component {
     
 
     render() {
+        const { navigation } = this.props
+        const gameName = navigation.getParam('gameName')
+        const date = navigation.getParam('date')
+        const maxNumber = navigation.getParam('maxNumber')
+        const eventName = navigation.getParam('eventName')
         return (
 
             <BackgroundView>
                 <CenterView>
+                    <Text>{gameName} {date} {maxNumber} {eventName}</Text>
                     <ParameterTouchableOpacity onPress={this.handleEventButtonPress}>
                         <Text>GO to Event</Text>
                     </ParameterTouchableOpacity>
