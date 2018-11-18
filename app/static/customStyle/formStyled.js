@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+export const Separator =  styled.View`
+marginTop: 10px;
+`
+
 export const BackgroundView = styled.View`
 flex: 1;
 `
