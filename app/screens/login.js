@@ -1,12 +1,13 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text, Alert } from 'react-native'
+import { View, Alert } from 'react-native'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 import { BackgroundView, CenterView, 
     ButtonTouchableOpacity, TouchableText, 
     InputTextStyled } from '../static/customStyle/formStyled'
+import {verifyMail} from '../config/tools'
 
 
 
@@ -21,12 +22,12 @@ class Login extends Component {
 
     state = {
         isLoggedIn: false,
-        username: '',
+        mail: '',
         password: ''
     }
 
-    onChangeUserNameInput = username => {
-        this.setState({username : username })
+    onChangeUserNameInput = mail => {
+        this.setState({mail : mail })
     }
 
     onChangePassWordInput = password => {
@@ -43,12 +44,19 @@ class Login extends Component {
     }
 
     handleLoginButton = () => {
-        const username = this.state.username
+        const mail = this.state.mail
         const password = this.state.password
-        if(username !== '' && !password !== ''){
-            this.props.navigation.navigate('Home')
+        if(mail !== '' && !password !== ''){
+            if(!verifyMail(mail)){
+                console.log('Nah good')
+            }
+            else {
+                console.log('Go to next step')
+                console.log(this.state)
+                this.props.navigation.navigate('HomeNav')
+            }
         }else {
-            Alert.alert('Error', 'Error: Invalid password and username')
+            Alert.alert('Error', 'Error: Invalid password and mail')
         }
     }
 
@@ -60,14 +68,22 @@ class Login extends Component {
                         <Text>Go Home</Text>
                     </ParameterTouchableOpacity> */}
 
-                    <InputTextStyled placeholder='Username' onChangeText={username => this.onChangeUserNameInput(username)}/>
+                    <InputTextStyled placeholder='e-mail' onChangeText={mail => this.onChangeUserNameInput(mail)}/>
                     <InputTextStyled secureTextEntry={true} placeholder='Password' onChangeText={password => this.onChangePassWordInput(password)}/>
                     <ButtonTouchableOpacity onPress={this.handleLoginButton}title="Submit">
                         <TouchableText>Submit</TouchableText>
                     </ButtonTouchableOpacity>
-                    <RegisterLinkTouchable onPress={this.handleRegisterLinkButton}>
-                        <Text>Pas de compte ? Inscrivez-vous ici !</Text>
-                    </RegisterLinkTouchable>
+                    <TouchableText> New to EazyLevel ? </TouchableText>
+                    <View
+                        style={{
+                            width: '70%',
+                            borderBottomColor: 'black',
+                            borderBottomWidth: 1,
+                        }}
+                        />
+                    <ButtonTouchableOpacity onPress={this.handleRegisterLinkButton}>
+                        <TouchableText>Create your EazyLevel Account</TouchableText>
+                    </ButtonTouchableOpacity>
                 </CenterView>
             </BackgroundView>
         )

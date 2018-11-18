@@ -4,17 +4,9 @@ import { Text } from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+import { BackgroundView, CenterView } from '../static/customStyle/formStyled'
+
 const ParameterTouchableOpacity = styled.TouchableOpacity ``
-
-const BackgroundView = styled.View`
-    flex: 1;
-`
-
-const CenterView = styled.View`
-flex: 5;
-justify-content: center;
-align-items: center;
-`
 
 
 // create a component
@@ -33,13 +25,13 @@ class Home extends Component {
         this.props.navigation.navigate('Jeux')
     }
 
+    
+
     render() {
         return (
+
             <BackgroundView>
                 <CenterView>
-                    <ParameterTouchableOpacity onPress={this.handleRegisterButtonPress}>
-                        <Text>GO to Register</Text>
-                    </ParameterTouchableOpacity>
                     <ParameterTouchableOpacity onPress={this.handleEventButtonPress}>
                         <Text>GO to Event</Text>
                     </ParameterTouchableOpacity>

@@ -40,8 +40,6 @@ class Register extends Component {
         const password = this.state.password
         const confirmPsw = this.state.confirmpassword
 
-        
-
         if(username !== '' && mail !== '' && password != '' && confirmPsw !== ''){
             if(!verifyMail(mail)){
                 console.log('Nah good')
@@ -52,6 +50,7 @@ class Register extends Component {
             else {
                 console.log('Go to next step')
                 console.log(this.state)
+                this.props.navigation.navigate('Login')
             }
         }
         else {

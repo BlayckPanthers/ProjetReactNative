@@ -11,7 +11,7 @@ align-items: center;
 `
 
 export const ButtonTouchableOpacity = styled.TouchableOpacity `
-width: 50%;
+width: 70%;
 marginBottom: 10;
 height: 40;
 borderColor: black;
@@ -27,10 +27,16 @@ fontSize: 13;
 
 export const InputTextStyled = styled.TextInput `
 textAlign: center;
-width: 50%;
+width: 70%;
 marginBottom: 7;
 height: 40;
 borderRadius: 5;
 borderWidth: 3;
 fontSize: 13;
+`
+
+export const SeparationView = styled.View`
+width: 70%;
+borderBottomColor: black;
+borderBottomWidth: 1;
 `
