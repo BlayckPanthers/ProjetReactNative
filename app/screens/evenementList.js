@@ -1,9 +1,9 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text, Alert, Image } from 'react-native'
+import { Alert, Image } from 'react-native'
 import PropTypes from 'prop-types'
-import { BackgroundView, CenterView, AddButton, InputTextStyled, ButtonTouchableOpacity, TouchableText, Separator } from '../static/customStyle/formStyled'
-import Dialog, { DialogContent } from 'react-native-popup-dialog'
+import { BackgroundView, CenterView, AddButton, InputTextDialogStyled, ButtonTouchableOpacity, TouchableText, Separator, SeparatorBigger } from '../static/customStyle/formStyled'
+import Dialog, { DialogContent, DialogTitle } from 'react-native-popup-dialog'
 import boutonPlus from '../static/images/boutonPlus.png'
 
 import Evenement from '../components/evenement'
@@ -45,7 +45,7 @@ class EvenementScreen extends Component {
         const maxNumber = this.state.maxNumber
         const eventName = this.state.eventName
 
-        if(date == ''|| maxNumber == 0 || eventName == '' ){
+        if(date == ''|| isNaN(maxNumber) || eventName == '' ){   
             Alert.alert('Error', 'Please fill all the fields')
         }
         else {
@@ -75,15 +75,19 @@ class EvenementScreen extends Component {
                     onTouchOutside={() => {
                     this.setState({ visible: false })
                     }}
+                    dialogTitle={<DialogTitle title="Créer un évènement" />}
+                    width={0.9}
                 >
                     <DialogContent>
-                        <Text>Créer un évènement</Text>
-                        <InputTextStyled placeholder='Event name' onChangeText={eventName => this.onChangeEventNameInput(eventName)}/>
-                        <InputTextStyled placeholder='Player max number' onChangeText={maxNumber => this.onChangeMaxNumberInput(maxNumber)}/>
-                        <InputTextStyled placeholder='Date' onChangeText={date => this.onChangeDateInput(date)}/>
+                        <InputTextDialogStyled placeholder='Event name' onChangeText={eventName => this.onChangeEventNameInput(eventName)}/>
+                        <InputTextDialogStyled placeholder='Player max number' onChangeText={maxNumber => this.onChangeMaxNumberInput(maxNumber)}/>
+                        <InputTextDialogStyled placeholder='Date' onChangeText={date => this.onChangeDateInput(date)}/>
+                        <SeparatorBigger/>
+                        <CenterView>
                         <ButtonTouchableOpacity onPress={this.handleCreateEventButton}>
                             <TouchableText>Créer un évènement</TouchableText>
                         </ButtonTouchableOpacity>
+                        </CenterView>
                     </DialogContent>
                 </Dialog>          
                 <CenterView>

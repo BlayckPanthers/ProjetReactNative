@@ -3,6 +3,11 @@ import styled from 'styled-components'
 export const Separator =  styled.View`
 marginTop: 10px;
 `
+
+export const SeparatorBigger =  styled.View`
+marginTop: 30px;
+`
+
 export const AddButton = styled.TouchableOpacity`
 flexDirection: row;
 justifyContent: flex-end;
@@ -38,6 +43,16 @@ fontSize: 13;
 export const InputTextStyled = styled.TextInput `
 textAlign: center;
 width: 70%;
+marginBottom: 7;
+height: 40;
+borderRadius: 5;
+borderWidth: 3;
+fontSize: 13;
+`
+
+export const InputTextDialogStyled = styled.TextInput `
+textAlign: center;
+width: 100%;
 marginBottom: 7;
 height: 40;
 borderRadius: 5;
