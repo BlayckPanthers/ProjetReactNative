@@ -13,6 +13,16 @@ backgroundColor: #000000;
 color: #FFFFFF;
 `
 
+export const User = styled.Text`
+text-align: center;
+font-weight: 500;
+font-size: 25px;
+color: #000000;
+margin-bottom: 10px;
+margin-top: 10px;
+
+`
+
 // create a component
 class EvenementScreen extends Component {
     static propTypes = {
@@ -27,10 +37,13 @@ class EvenementScreen extends Component {
 
         return (
             <BackgroundView>
-                <EventTitle>{eventName}test</EventTitle> 
+                <EventTitle>{eventName}</EventTitle> 
                 <Text>{maxNumber}</Text>     
                 <CenterView>
-                    <Text>GG</Text>
+                    <User>Blayck</User>
+                    <User>Fellart</User>
+                    <User>Testo</User>
+                    <User>Longue Vie</User>
                 </CenterView>
             </BackgroundView>
         )
