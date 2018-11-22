@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text} from 'react-native'
+import { Text } from 'react-native'
 import PropTypes from 'prop-types'
 import { BackgroundView, CenterView } from '../static/customStyle/formStyled'
 import styled from 'styled-components'
@@ -37,9 +37,10 @@ class EvenementScreen extends Component {
 
         return (
             <BackgroundView>
-                <EventTitle>{eventName}</EventTitle> 
-                <Text>{maxNumber}</Text>     
+
                 <CenterView>
+                    <EventTitle>{eventName}</EventTitle>
+                    <Text>{maxNumber}</Text>
                     <User>Blayck</User>
                     <User>Fellart</User>
                     <User>Testo</User>

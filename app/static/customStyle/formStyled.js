@@ -19,6 +19,16 @@ export const BackgroundView = styled.View`
 flex: 1;
 `
 
+export const TopView = styled.View`
+flex: 1;
+backgroundColor: yellow;
+`
+
+export const BodyView = styled.View`
+flex: 6;
+backgroundColor: green;
+`
+
 export const CenterView = styled.View`
 flex: 5;
 justify-content: center;
@@ -32,6 +42,13 @@ height: 40;
 borderColor: black;
 borderRadius:10;
 borderWidth: 1;
+`
+
+
+export const TextCustomize = styled.Text`
+textAlign: center;
+marginTop: 10;
+fontSize: 13;
 `
 
 export const TouchableText = styled.Text `

@@ -4,12 +4,12 @@ import { Alert, Image } from 'react-native'
 import PropTypes from 'prop-types'
 import { BackgroundView, CenterView, AddButton, InputTextDialogStyled, ButtonTouchableOpacity, TouchableText, Separator, SeparatorBigger } from '../static/customStyle/formStyled'
 import Dialog, { DialogContent, DialogTitle } from 'react-native-popup-dialog'
-import boutonPlus from '../static/images/boutonPlus.png'
 
 import Evenement from '../components/evenement'
 
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
+import boutonPlus from '../static/images/boutonPlus.png'
 
 
 // create a component
