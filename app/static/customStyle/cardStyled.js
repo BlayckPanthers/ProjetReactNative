@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 
 export const GameName = styled.Text `
+height: 20%; 
 color: white;
 fontWeight: bold;
 backgroundColor: black;
@@ -10,7 +11,7 @@ backgroundColor: black;
 
 export const TextViewOnImage = styled.View `
 flex: 1;
-height: 20px; 
+height: 15%;
 flexDirection: row;
 justifyContent: space-between;
 `
@@ -25,7 +26,6 @@ borderRadius: 5;
 
 export const TextViewOnImageBottom = styled.View `
 flex: 1;
-height: 20px;
 flexDirection: column;
 justifyContent: flex-end;
 `

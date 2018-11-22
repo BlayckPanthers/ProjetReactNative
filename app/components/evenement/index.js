@@ -28,11 +28,11 @@ class Evenement extends Component {
                     <ImageBackground source={this.props.SourceImage} style={{width: '100%', height: '100%'}} >
                         <View style={{flex:1}}>
                         <TextViewOnImage>
-                                <GameName>{this.props.EventName}</GameName>
-                                <GameName>{this.props.ActualNumberEvent}/{this.props.TotalNumberEvent}</GameName>
+                                <GameName style={{height:'40%'}}>{this.props.EventName}</GameName>
+                                <GameName style={{height:'40%'}}>{this.props.ActualNumberEvent}/{this.props.TotalNumberEvent}</GameName>
                         </TextViewOnImage>
                         <TextViewOnImageBottom>
-                                <GameName style={{textAlignVertical: 'center',textAlign: 'center'}}>{this.props.DateEvent}</GameName>
+                                <GameName style={{height:'40%',textAlignVertical: 'center',textAlign: 'center'}}>{this.props.DateEvent}</GameName>
                         </TextViewOnImageBottom>
                         </View>
                     </ImageBackground>

@@ -21,13 +21,7 @@ class HomeScreen extends Component {
 
     }
 
-    handleEventButtonPress = () => {
-        this.props.navigation.navigate('Register')
-    }
-
-    handleJeuxButtonPress = () => {
-        this.props.navigation.navigate('Jeux')
-    }
+    
 
     render() {
         const { navigation } = this.props
@@ -48,12 +42,6 @@ class HomeScreen extends Component {
             return (
                 <BackgroundView>
                     <CenterView>
-                        <ParameterTouchableOpacity onPress={this.handleEventButtonPress}>
-                            <Text>GO to Event</Text>
-                        </ParameterTouchableOpacity>
-                        <ParameterTouchableOpacity onPress={this.handleJeuxButtonPress}>
-                            <Text>GO to Jeux</Text>
-                        </ParameterTouchableOpacity>
                     </CenterView>
                 </BackgroundView>
             )
