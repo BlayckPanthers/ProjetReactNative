@@ -38,7 +38,7 @@ const LoginStack = createStackNavigator({
   }
 })
 
-export const StackNav =  createStackNavigator(
+export const StackNav = createStackNavigator(
   {
     Login: {
       screen: LoginStack
@@ -47,7 +47,7 @@ export const StackNav =  createStackNavigator(
   optionsGeneral
 )
 
-const EventStack =  createStackNavigator(
+const EventStack = createStackNavigator(
   {
     EvenementList: {
       screen: EvenementList,
@@ -65,33 +65,33 @@ const EventStack =  createStackNavigator(
 )
 
 export const BottomNav = createBottomTabNavigator({
-    Home: Home,
-    Evenement: EventStack,
-    Jeux: Jeux
-},  {
-        defaultNavigationOptions: ({ navigation }) => ({
-            tabBarIcon: ({ focused, horizontal, tintColor }) => {
-                const { routeName } = navigation.state
-                let iconName
-                console.log('home')
-                if (routeName === 'Home') {
-                  iconName = `ios-information-circle${focused ? '' : '-outline'}`
-                } else if (routeName === 'EvenementList') {
-                  console.log('Event')
-                  iconName = `ios-options${focused ? '' : '-outline'}`
-                } else if (routeName === 'Jeux'){
-                  console.log('Jeux')
-                  iconName = `ios-game-controller-a${focused ? '' : '-outline'}`
-                }
+  Home: Home,
+  Evenement: EventStack,
+  Jeux: Jeux
+}, {
+    defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state
+        let iconName
+        console.log('home')
+        if (routeName === 'Home') {
+          iconName = `ios-information-circle${focused ? '' : '-outline'}`
+        } else if (routeName === 'EvenementList') {
+          console.log('Event')
+          iconName = `ios-options${focused ? '' : '-outline'}`
+        } else if (routeName === 'Jeux') {
+          console.log('Jeux')
+          iconName = `ios-game-controller-a${focused ? '' : '-outline'}`
+        }
 
-                // You can return any component that you like here! We usually use an
-                // icon component from react-native-vector-icons
-                return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />
-            },
-        }),
-        tabBarOptions: {
-            activeTintColor: 'blue',
-            inactiveTintColor: 'gray',
-        },
-    }
+        // You can return any component that you like here! We usually use an
+        // icon component from react-native-vector-icons
+        return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'blue',
+      inactiveTintColor: 'gray',
+    },
+  }
 )

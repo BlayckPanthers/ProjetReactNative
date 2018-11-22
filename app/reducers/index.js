@@ -2,8 +2,10 @@ import { combineReducers } from 'redux'
 
 import jeux from './jeux'
 import evenement from './evenement'
+import dialog from './dialog'
 
 export default combineReducers({
     jeux,
-    evenement
+    evenement,
+    dialog
 })
