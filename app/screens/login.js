@@ -1,7 +1,6 @@
 //import liraries
 import React, { Component } from 'react'
-import { View, Alert } from 'react-native'
-import styled from 'styled-components'
+import { View, AsyncStorage} from 'react-native'
 import PropTypes from 'prop-types'
 
 import { BackgroundView, CenterView, 
@@ -10,8 +9,6 @@ import { BackgroundView, CenterView,
 import {verifyMail} from '../config/tools'
 
 
-
-const RegisterLinkTouchable = styled.TouchableOpacity ``
 
 
 // create a component
@@ -43,9 +40,11 @@ class LoginScreen extends Component {
         this.props.navigation.navigate('Home')
     }
 
-    handleLoginButton = () => {
+    handleLoginButton = async() => {
         const mail = this.state.mail
         const password = this.state.password
+
+        await AsyncStorage.setItem('userToken', 'abc')
         // if(mail !== '' && !password !== ''){
         //     if(!verifyMail(mail)){
         //         console.log('Nah good')
@@ -57,7 +56,7 @@ class LoginScreen extends Component {
         // }else {
         //     Alert.alert('Error', 'Error: Invalid password and mail')
         // }
-       this.props.navigation.navigate('HomeNav')
+       this.props.navigation.navigate('App')
     }
 
     render() {

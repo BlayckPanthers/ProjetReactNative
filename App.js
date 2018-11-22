@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux'
 import React from 'react'
 
-import {StackNav} from './app/config/routes'
+import RouteNav from './app/config/routes'
 import { store } from './app/config/store'
 //  <Provider >
 export default class App extends React.Component {
@@ -9,7 +9,7 @@ export default class App extends React.Component {
       
       return (
         <Provider store={store}>
-            <StackNav />
+            <RouteNav />
         </Provider>
       )
   }

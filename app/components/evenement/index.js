@@ -14,17 +14,15 @@ class Evenement extends Component {
         ActualNumberEvent: PropTypes.number,
         SourceImage: PropTypes.number,
         DateEvent: PropTypes.string,
-        OnClick: PropTypes.number
+        OnClick: PropTypes.func
     }
 
-    _handleClick = event => {
-        console.log('event ' + event)
-    }
+    
 
     render() {
         return (
             <CardView>
-                <TouchableOpacity onPress={this._handleClick(this.props.OnClick)}>
+                <TouchableOpacity onPress={this.props.OnClick}>
                     <ImageBackground source={this.props.SourceImage} style={{width: '100%', height: '100%'}} >
                         <View style={{flex:1}}>
                         <TextViewOnImage>

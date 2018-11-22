@@ -60,6 +60,14 @@ class EvenementScreen extends Component {
         }
     }
 
+    _handleClick = (event, max, date) => {
+        this.props.navigation.navigate('Evenement', {
+            date: date,
+            maxNumber: max,
+            eventName: event,
+        })
+    }
+
     render() {
         return (
             <BackgroundView>    
@@ -93,11 +101,11 @@ class EvenementScreen extends Component {
                 <CenterView>
                     <Evenement EventName="Tournois 1V1" TotalNumberEvent={48}
                         ActualNumberEvent={5} SourceImage={CsgoImage}
-                        DateEvent="29-05-2018 - 19H" />
+                        DateEvent="29-05-2018 - 19H" OnClick={()=> this._handleClick('Tournois 1V1',48, '29-05-2018 - 19H')}/>
                     <Separator/>
                     <Evenement EventName="ARAM" TotalNumberEvent={48}
                         ActualNumberEvent={5} SourceImage={LolImage}
-                        DateEvent="31-05-2018 - 19H" />
+                        DateEvent="31-05-2018 - 19H" OnClick={() => this._handleClick('ARAM',5, '231-05-2018 - 19H')} />
                 </CenterView>
             </BackgroundView>
         )

@@ -1,15 +1,10 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text } from 'react-native'
+import {AsyncStorage} from 'react-native'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import { BackgroundView, CenterView, ButtonTouchableOpacity, TouchableText} from '../static/customStyle/formStyled'
 
-import Evenement from '../components/evenement'
 
-import { BackgroundView, CenterView, Separator } from '../static/customStyle/formStyled'
-import LolImage from '../static/images/lol.jpg'
-
-const ParameterTouchableOpacity = styled.TouchableOpacity ``
 
 
 // create a component
@@ -17,35 +12,26 @@ class HomeScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
 
     }
 
-    
+    _signOutAsync = async () => {
+        await AsyncStorage.clear()
+        this.props.navigation.navigate('Auth')
+      }
 
     render() {
-        const { navigation } = this.props
-        const date = navigation.getParam('date', '')
-        const maxNumber = navigation.getParam('maxNumber', 0)
-        const eventName = navigation.getParam('eventName', '')
 
-        if(date !== '' && maxNumber !== 0 && eventName !== '' ) {
-            return <BackgroundView>
-            <CenterView>
-                <Evenement EventName= {eventName} TotalNumberEvent={maxNumber}
-                    ActualNumberEvent={5} SourceImage={LolImage}
-                    DateEvent= {date} />
-                <Separator/>
-            </CenterView>
+        return (
+            <BackgroundView>
+                <CenterView>
+                <ButtonTouchableOpacity onPress={this._signOutAsync}title="Submit">
+                        <TouchableText>Deconnexion</TouchableText>
+                    </ButtonTouchableOpacity>
+                </CenterView>
             </BackgroundView>
-        }else{
-            return (
-                <BackgroundView>
-                    <CenterView>
-                    </CenterView>
-                </BackgroundView>
-            )
-        }
+        )
     }
 }
 
