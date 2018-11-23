@@ -3,7 +3,6 @@
 import React from 'react'
 import {
   createSwitchNavigator,
-  createAppContainer,
   createStackNavigator,
   createBottomTabNavigator
 } from 'react-navigation'
@@ -15,6 +14,9 @@ import Home from '../screens/home'
 import EvenementList from '../screens/evenementList'
 import Jeux from '../screens/jeux'
 import Evenement from '../screens/evenement'
+import Settings from '../screens/settings'
+import MyEvents from '../screens/myEvents'
+
 import AuthLoadingScreen from '../components/auth'
 
 import logoEvent from '../static/images/icons/event.png'
@@ -71,6 +73,18 @@ const HomeStack = createStackNavigator({
     navigationOptions: {
       header: () => null
     }
+  },
+  MyEvents: {
+    screen: MyEvents,
+    navigationOptions: {
+      headerTitle: 'Mes Evenements'
+    }
+  },
+  Settings: {
+    screen: Settings,
+    navigationOptions: {
+      headerTitle: 'Paramètres'
+    }
   }
 })
 
@@ -106,9 +120,10 @@ export const AppStack = createBottomTabNavigator(
   {
     tabBarOptions: {
       activeTintColor: 'black',
-      inactiveTintColor: 'gray'
+      inactiveTintColor: 'gray',
+      activeBackgroundColor: 'gray'
     }
-  }
+  }  
 )
 
 export default createSwitchNavigator(

@@ -20,13 +20,13 @@ flex: 1;
 `
 
 export const TopView = styled.View`
-flex: 1;
+flex: 3;
 backgroundColor: yellow;
 `
 
 export const BodyView = styled.View`
-flex: 6;
-backgroundColor: green;
+flex: 4;
+
 `
 
 export const CenterView = styled.View`
@@ -43,7 +43,6 @@ borderColor: black;
 borderRadius:10;
 borderWidth: 1;
 `
-
 
 export const TextCustomize = styled.Text`
 textAlign: center;
