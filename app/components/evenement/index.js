@@ -1,10 +1,39 @@
 //import liraries
 import React, { Component } from 'react'
 import { View ,ImageBackground, TouchableOpacity } from 'react-native'
+import styled from 'styled-components'
 
 import PropTypes from 'proptypes'
 
-import {GameName, TextViewOnImage,TextViewOnImageBottom,CardView} from '../../static/customStyle/cardStyled'
+const GameName = styled.Text `
+height: 20%; 
+color: white;
+fontWeight: bold;
+backgroundColor: black;
+`
+
+const TextViewOnImage = styled.View `
+flex: 1;
+height: 15%;
+flexDirection: row;
+justifyContent: space-between;
+`
+
+const CardView = styled.View `
+width: 100%;
+minHeight: 15%;
+flexShrink:0;
+borderWidth: 1;
+borderColor: black;
+borderRadius: 5;
+marginBottom: 10;
+`
+
+const TextViewOnImageBottom = styled.View `
+flex: 1;
+flexDirection: column;
+justifyContent: flex-end;
+`
 
 // create a component
 class Evenement extends Component {

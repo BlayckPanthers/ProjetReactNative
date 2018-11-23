@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react'
-import { Alert, Image, View } from 'react-native'
+import { Alert} from 'react-native'
 import PropTypes from 'prop-types'
 import { BackgroundView, CenterView, AddButton, InputTextDialogStyled, ButtonTouchableOpacity, TouchableText, Separator, SeparatorBigger } from '../static/customStyle/formStyled'
 import Dialog, { DialogContent, DialogTitle } from 'react-native-popup-dialog'
@@ -13,10 +13,9 @@ import LolImage from '../static/images/lol.jpg'
 import boutonPlus from '../static/images/icons/eventAdd.png'
 
 
-export const TopViewCenter = styled.View `
-flex: 5;
-justify-content: center;
-align-items: center;
+const FlatList = styled.FlatList`
+
+flex: 1;
 `
 
 export const TopViewHead = styled.View `
@@ -31,10 +30,6 @@ width: 26px;
 height: 26px;
 `
 
-const FlatList = styled.FlatList `
-width: 100%;
-flex: 1;
-`
 
 const ButtonAdd = styled.TouchableOpacity `
 width: 70%;
@@ -62,6 +57,12 @@ backgroundColor: yellow;
 const BodyView = styled.View`
 flex: 5;
 backgroundColor: green;
+alignItems:center;
+`
+
+const ViewTest = styled.View`
+flex:1;
+width: 80%;
 `
 
 const Text = styled.Text``
@@ -116,6 +117,8 @@ class EvenementScreen extends Component {
         }
     }
 
+    _keyExtractor = (item) => item.id;
+
     _handleClick = (event, max, date) => {
         this.props.navigation.navigate('Evenement', {
             date: date,
@@ -123,6 +126,12 @@ class EvenementScreen extends Component {
             eventName: event,
         })
     }
+
+    _renderItem = ({item}) => (
+        <Evenement EventName={item.eventName} TotalNumberEvent={item.totalNumber}
+                ActualNumberEvent={item.actualNumber} SourceImage={item.img}
+                DateEvent={item.dateEvent} OnClick={()=> this._handleClick(item.eventName,item.totalNumber, item.dateEvent)}/> 
+    )
 
     render() {
         return (
@@ -142,10 +151,8 @@ class EvenementScreen extends Component {
                     </TopViewHead>    
                 </TopView>
                 <BodyView>
-                        <TopViewCenter>
+                    <ViewTest>
                                 <FlatList
-                        
-
                                     data={[
                                         {eventName: 'Tournoi 5V5', 'totalNumber': 20, 'actualNumber':12, 'img':CsgoImage, 'dateEvent':'15-05-2018 - 19H'}, 
                                         {eventName: 'ARAM', 'totalNumber': 5, 'actualNumber':2, 'img':LolImage, 'dateEvent':'15-05-2018 - 23H'},
@@ -161,13 +168,13 @@ class EvenementScreen extends Component {
                                         {eventName: 'RANKED', 'totalNumber': 5, 'actualNumber':3, 'img':LolImage, 'dateEvent':'15-05-2018 - 20H'},
                                         {eventName: 'Tournoi 5V5', 'totalNumber': 20, 'actualNumber':12, 'img':CsgoImage, 'dateEvent':'15-05-2018 - 19H'},
                                         ]}
-                                    renderItem={({item}) => 
-                                    <Evenement EventName={item.eventName} TotalNumberEvent={item.totalNumber}
-                                        ActualNumberEvent={item.actualNumber} SourceImage={item.img}
-                                        DateEvent={item.dateEvent} OnClick={()=> this._handleClick(item.eventName,item.totalNumber, item.dateEvent)}/>     
-                                    }
+                                    renderItem={this._renderItem}
+                                    keyExtractor={this._keyExtractor}
+                                    
                                 />
-                        </TopViewCenter>
+
+                    </ViewTest>
+
                 </BodyView>
                 <Dialog
                     visible={this.state.visible}

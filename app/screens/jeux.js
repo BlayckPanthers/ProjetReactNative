@@ -1,14 +1,33 @@
 //import liraries
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-import { BackgroundView, CenterView, Separator } from '../static/customStyle/formStyled'
+import styled from 'styled-components'
+import { BackgroundView} from '../static/customStyle/formStyled'
 import Jeux from '../components/jeux'
+
 
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 
 
+const FlatList = styled.FlatList`
+flex: 1;
+`
+const TopView = styled.View`
+flex: 1;
+flex-grow: 1;
+backgroundColor: yellow;
+`
+
+const BodyView = styled.View`
+flex: 5;
+backgroundColor: green;
+alignItems:center;
+`
+const ViewTest = styled.View`
+flex:1;
+width: 80%;
+`
 
 // create a component
 class JeuxScreen extends Component {
@@ -16,14 +35,32 @@ class JeuxScreen extends Component {
         navigation: PropTypes.object
     }
 
+    _keyExtractor = (item) => item.id;
+
+    _renderItem = ({item}) => (
+        <Jeux SourceImage={item.img} GameName={item.gameName} TotalNumberEvent={item.totalNumber} />
+
+    )
+
     render() {
         return (
             <BackgroundView>
-                <CenterView>
-                        <Jeux SourceImage={CsgoImage} GameName="CS GO" TotalNumberEvent={20} OnClick={1}/>
-                    <Separator/>
-                        <Jeux SourceImage={LolImage} GameName="LOL" TotalNumberEvent={8} OnClick={2}/>
-                </CenterView>
+                <TopView>
+
+                </TopView>
+                <BodyView>
+                    <ViewTest>
+                        <FlatList
+                                data={[
+                                    {gameName: 'CsGo', 'totalNumber': 20, 'img':CsgoImage}, 
+                                    {gameName: 'LOL', 'totalNumber': 12, 'img':LolImage}
+                                    ]}
+                                renderItem={this._renderItem}
+                                keyExtractor={this._keyExtractor}   
+                            />
+
+                    </ViewTest>
+                </BodyView>
             </BackgroundView>
         )
     }
