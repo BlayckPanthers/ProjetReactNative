@@ -4,7 +4,18 @@ import { View, AsyncStorage } from 'react-native'
 import PropTypes from 'proptypes'
 import styled from 'styled-components'
 
-import {BackgroundView, TopView, BodyView, CenterView} from '../static/customStyle/formStyled'
+
+
+
+const BackgroundView = styled.View`
+flex: 1;
+`
+
+const CenterView = styled.View`
+flex: 5;
+justify-content: center;
+align-items: center;
+`
 
 const ButtonDisconnect = styled.TouchableOpacity `
 width: 70%;

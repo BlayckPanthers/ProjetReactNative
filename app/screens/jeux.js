@@ -2,14 +2,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { BackgroundView} from '../static/customStyle/formStyled'
+
 import Jeux from '../components/jeux'
 
 
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 
-
+const BackgroundView = styled.View`
+flex: 1;
+`
 const FlatList = styled.FlatList`
 flex: 1;
 `

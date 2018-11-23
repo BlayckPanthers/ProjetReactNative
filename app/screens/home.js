@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import {AsyncStorage, TouchableOpacity} from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { BackgroundView,TopView, BodyView,ButtonTouchableOpacity, TextCustomize} from '../static/customStyle/formStyled'
+
 
 import PlatformGame from '../components/platformGame'
 
@@ -11,17 +11,21 @@ import iconProfil from '../static/images/icons/profile.png'
 import iconSetting from '../static/images/icons/setting.png'
 import iconMyGroups from '../static/images/icons/groups.png'
 
-export const ButtonCustomize = styled.View `
-width: 30%;
-marginBottom: 10;
-height: 40;
-borderColor: white;
-backgroundColor: #323EC7;
-borderRadius:10;
-borderWidth: 1;
+const TopView = styled.View`
+flex: 3;
+backgroundColor: yellow;
 `
 
-export const ImageProfile = styled.Image `
+const BodyView = styled.View`
+flex: 4;
+
+`
+
+const BackgroundView = styled.View`
+flex: 1;
+`
+
+const ImageProfile = styled.Image `
 width: 130px;
 height: 130px;
 borderColor: black;
@@ -29,19 +33,19 @@ borderRadius: 65;
 borderWidth: 1;
 `
 
-export const ImageViewHead = styled.Image`
+const ImageViewHead = styled.Image`
 width: 26px;
 height: 26px;
 
 `
 
-export const TopViewCenter = styled.View `
+const TopViewCenter = styled.View `
 flex: 5;
 justify-content: center;
 align-items: center;
 `
 
-export const TopViewHead = styled.View `
+const TopViewHead = styled.View `
 flex: 1;
 marginTop:25;
 flexDirection: row;
@@ -103,12 +107,6 @@ class HomeScreen extends Component {
     }
 }
 
-{/* <ButtonCustomize title='Playstation'>
-                        <Image style={{height: 26, width: 26, justifyContent:'center' }} source={iconPlay} />
-                    </ButtonCustomize>
-                    <ButtonTouchableOpacity onPress={this._signOutAsync} title='Submit'>
-                        <TextCustomize>Deconnexion</TextCustomize>
-                    </ButtonTouchableOpacity> */}
 
 //make this component available to the app
 export default HomeScreen

@@ -2,10 +2,9 @@
 import React, { Component } from 'react'
 import { Text } from 'react-native'
 import PropTypes from 'prop-types'
-import { BackgroundView, CenterView } from '../static/customStyle/formStyled'
 import styled from 'styled-components'
 
-export const EventTitle = styled.Text`
+const EventTitle = styled.Text`
 justifyContent: center;
 text-align: center;
 font-weight: 500;
@@ -13,7 +12,7 @@ backgroundColor: #000000;
 color: #FFFFFF;
 `
 
-export const User = styled.Text`
+const User = styled.Text`
 text-align: center;
 font-weight: 500;
 font-size: 25px;
@@ -21,6 +20,15 @@ color: #000000;
 margin-bottom: 10px;
 margin-top: 10px;
 
+`
+
+const BackgroundView = styled.View`
+flex: 1;
+`
+const CenterView = styled.View`
+flex: 5;
+justify-content: center;
+align-items: center;
 `
 
 // create a component

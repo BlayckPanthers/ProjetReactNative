@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { Alert} from 'react-native'
 import PropTypes from 'prop-types'
-import { BackgroundView, CenterView, AddButton, InputTextDialogStyled, ButtonTouchableOpacity, TouchableText, Separator, SeparatorBigger } from '../static/customStyle/formStyled'
+
 import Dialog, { DialogContent, DialogTitle } from 'react-native-popup-dialog'
 import styled from 'styled-components'
 
@@ -12,20 +12,58 @@ import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 import boutonPlus from '../static/images/icons/eventAdd.png'
 
-
-const FlatList = styled.FlatList`
-
+const BackgroundView = styled.View`
 flex: 1;
 `
 
-export const TopViewHead = styled.View `
+const CenterView = styled.View`
+flex: 5;
+justify-content: center;
+align-items: center;
+`
+
+const SeparatorBigger =  styled.View`
+marginTop: 30px;
+`
+
+const ButtonTouchableOpacity = styled.TouchableOpacity `
+width: 70%;
+marginBottom: 10;
+height: 40;
+borderColor: black;
+borderRadius:10;
+borderWidth: 1;
+`
+
+
+const TouchableText = styled.Text `
+textAlign: center;
+marginTop: 10;
+fontSize: 13;
+`
+
+const InputTextDialogStyled = styled.TextInput `
+textAlign: center;
+width: 100%;
+marginBottom: 7;
+height: 40;
+borderRadius: 5;
+borderWidth: 3;
+fontSize: 13;
+`
+
+const FlatList = styled.FlatList`
+flex: 1;
+`
+
+const TopViewHead = styled.View `
 flex: 1;
 marginTop:25;
 flexDirection: row;
 justifyContent: center;
 `
 
-export const ImageViewHead = styled.Image`
+const ImageViewHead = styled.Image`
 width: 26px;
 height: 26px;
 `
@@ -170,11 +208,8 @@ class EvenementScreen extends Component {
                                         ]}
                                     renderItem={this._renderItem}
                                     keyExtractor={this._keyExtractor}
-                                    
                                 />
-
                     </ViewTest>
-
                 </BodyView>
                 <Dialog
                     visible={this.state.visible}
