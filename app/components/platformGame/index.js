@@ -10,6 +10,7 @@ import iconSteam from '../../static/images/icons/Steam.png'
 const ImageViewHead = styled.Image`
 width: 26px;
 height: 26px;
+margin: 3px;
 `
 const ButtonAdd = styled.View `
 width: 70%;
@@ -33,8 +34,6 @@ color:white;
 fontWeight:bold;
 `
 
-
-
 const ViewCustom = styled.View`
 flex: 1;
 flexDirection:row;
@@ -57,7 +56,7 @@ class platformGame extends Component {
                 <ButtonAdd backColor={plateforme}>
                     <ViewButtonAdd>
                         <ViewCustom>
-                            <ImageViewHead style={{margin: '3%'}}  source={img}/>
+                            <ImageViewHead source={img}/>
                             <TextBar>{plateforme} ID: </TextBar>
                             <TextBar> {gamerTag} </TextBar>
                         </ViewCustom>

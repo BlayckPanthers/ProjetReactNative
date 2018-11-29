@@ -1,6 +1,6 @@
 export const AJOUTER_EVENEMENT = 'AJOUTER_EVENEMENT'
 
-export const changeTheme = evenement => ({
+export const ajouterEvenement = evenement => ({
   type: AJOUTER_EVENEMENT,
   evenement
 })

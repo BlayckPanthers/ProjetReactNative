@@ -7,7 +7,7 @@ class myEventsScreen extends Component {
     render() {
         return (
             <View>
-                <Text>myEventsScreen</Text>
+                <Text>TODO : Afficher la liste des evenements de l'utilisateur ici</Text>
             </View>
         )
     }

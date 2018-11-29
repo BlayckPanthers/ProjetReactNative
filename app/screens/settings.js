@@ -4,9 +4,6 @@ import { View, AsyncStorage } from 'react-native'
 import PropTypes from 'proptypes'
 import styled from 'styled-components'
 
-
-
-
 const BackgroundView = styled.View`
 flex: 1;
 `

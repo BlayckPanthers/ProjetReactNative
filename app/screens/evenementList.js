@@ -230,7 +230,7 @@ class EvenementScreen extends Component {
                         </ButtonTouchableOpacity>
                         </CenterView>
                     </DialogContent>
-                </Dialog>          
+                </Dialog>
             </BackgroundView>
         )
     }

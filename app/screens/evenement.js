@@ -45,7 +45,6 @@ class EvenementScreen extends Component {
 
         return (
             <BackgroundView>
-
                 <CenterView>
                     <EventTitle>{eventName}</EventTitle>
                     <Text>{maxNumber}</Text>

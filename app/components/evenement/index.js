@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import PropTypes from 'proptypes'
 
 const GameName = styled.Text `
-height: 20%; 
+height: 40%; 
 color: white;
 fontWeight: bold;
 backgroundColor: black;
@@ -55,11 +55,11 @@ class Evenement extends Component {
                     <View style={{flex:1}}>
                         <ImageBackground source={this.props.SourceImage} style={{flex: 1,width: '100%', resizeMode:'contain'}} >
                             <TextViewOnImage>
-                                    <GameName style={{height:'40%'}}>{this.props.EventName}</GameName>
-                                    <GameName style={{height:'40%'}}>{this.props.ActualNumberEvent}/{this.props.TotalNumberEvent}</GameName>
+                                    <GameName >{this.props.EventName}</GameName>
+                                    <GameName >{this.props.ActualNumberEvent}/{this.props.TotalNumberEvent}</GameName>
                             </TextViewOnImage>
                             <TextViewOnImageBottom>
-                                    <GameName style={{height:'40%',textAlignVertical: 'center',textAlign: 'center'}}>{this.props.DateEvent}</GameName>
+                                    <GameName style={{textAlignVertical: 'center',textAlign: 'center'}}>{this.props.DateEvent}</GameName>
                             </TextViewOnImageBottom>
                         </ImageBackground>
                     </View>

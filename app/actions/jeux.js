@@ -1,6 +1,6 @@
 export const AJOUTER_JEUX = 'AJOUTER_JEUX'
 
-export const changeTheme = jeux => ({
+export const ajouterJeux = jeux => ({
   type: AJOUTER_JEUX,
   jeux
 })
