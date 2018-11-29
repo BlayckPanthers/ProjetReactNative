@@ -119,6 +119,8 @@ class EvenementScreen extends Component {
         date: '',
         eventName: '',
         maxNumber: 0,
+        gameImg: '',
+        actualNumber: 0,
         visible: false
     }
 
@@ -139,6 +141,8 @@ class EvenementScreen extends Component {
         const date = this.state.date
         const maxNumber = this.state.maxNumber
         const eventName = this.state.eventName
+        const gameImg = this.state.gameImg
+        const actualNumber = this.state.actualNumber
 
         if(date == ''|| isNaN(maxNumber) || eventName == '' ){   
             Alert.alert('Error', 'Please fill all the fields')
@@ -151,24 +155,29 @@ class EvenementScreen extends Component {
                 date: date,
                 maxNumber: maxNumber,
                 eventName: eventName,
+                gameImg: gameImg,
+                actualNumber: actualNumber,
             })
         }
     }
 
     _keyExtractor = (item) => item.id;
 
-    _handleClick = (event, max, date) => {
+    _handleClick = (event, max, date, gameImg, actualNumber, maxNumber) => {
         this.props.navigation.navigate('Evenement', {
             date: date,
             maxNumber: max,
             eventName: event,
+            gameImg: gameImg,
+            actualNumber: actualNumber,
+            totalNumber: maxNumber
         })
     }
 
     _renderItem = ({item}) => (
         <Evenement EventName={item.eventName} TotalNumberEvent={item.totalNumber}
                 ActualNumberEvent={item.actualNumber} SourceImage={item.img}
-                DateEvent={item.dateEvent} OnClick={()=> this._handleClick(item.eventName,item.totalNumber, item.dateEvent)}/> 
+                DateEvent={item.dateEvent} OnClick={()=> this._handleClick(item.eventName,item.totalNumber, item.dateEvent, item.img, item.actualNumber, item.totalNumber)}/> 
     )
 
     render() {

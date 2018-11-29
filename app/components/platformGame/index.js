@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import PropTypes from 'proptypes'
 
 import iconPlay from '../../static/images/icons/PSN.png'
-import iconXbox from '../../static/images/icons/Xbox.png'
-import iconSteam from '../../static/images/icons/Steam.png'
+import iconXbox from '../../static/images/icons/xbox.png'
+import iconSteam from '../../static/images/icons/steam.png'
 
 const ImageViewHead = styled.Image`
 width: 26px;
