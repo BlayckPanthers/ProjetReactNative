@@ -13,12 +13,14 @@ const CenterView = styled.View`
 flex: 5;
 justify-content: center;
 align-items: center;
+
 `
 const ButtonTouchableOpacity = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
 height: 40;
-borderColor: black;
+borderColor: #e85693;
+backgroundColor: #e85693;
 borderRadius:10;
 borderWidth: 1;
 `
@@ -26,6 +28,7 @@ borderWidth: 1;
 const TouchableText = styled.Text `
 textAlign: center;
 marginTop: 10;
+color: #FFFFFF;
 fontSize: 13;
 `
 
@@ -94,13 +97,13 @@ class LoginScreen extends Component {
                     {/* <ParameterTouchableOpacity onPress={this.handleHomeButtonPress}>
                         <Text>Go Home</Text>
                     </ParameterTouchableOpacity> */}
-
+                        
                     <InputTextStyled placeholder='e-mail' onChangeText={mail => this.onChangeUserNameInput(mail)}/>
                     <InputTextStyled secureTextEntry={true} placeholder='Password' onChangeText={password => this.onChangePassWordInput(password)}/>
                     <ButtonTouchableOpacity onPress={this.handleLoginButton}title="Submit">
                         <TouchableText>Submit</TouchableText>
                     </ButtonTouchableOpacity>
-                    <TouchableText> New to EazyLevel ? </TouchableText>
+                    <TouchableText style={{color: 'black'}}> New to EazyLevel ? </TouchableText>
                     <View
                         style={{
                             width: '70%',

@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 import Jeux from '../components/jeux'
 
-
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 
@@ -14,19 +13,20 @@ flex: 1;
 `
 const FlatList = styled.FlatList`
 flex: 1;
+margin: 5px;
 `
 const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
-backgroundColor: yellow;
+backgroundColor: #515151;
 `
 
 const BodyView = styled.View`
 flex: 5;
-backgroundColor: green;
+backgroundColor: silver;
 alignItems:center;
 `
-const ViewTest = styled.View`
+const ViewFlatList = styled.View`
 flex:1;
 width: 80%;
 `
@@ -51,7 +51,7 @@ class JeuxScreen extends Component {
 
                 </TopView>
                 <BodyView>
-                    <ViewTest>
+                    <ViewFlatList>
                         <FlatList
                                 data={[
                                     {gameName: 'CsGo', 'totalNumber': 20, 'img':CsgoImage}, 
@@ -61,7 +61,7 @@ class JeuxScreen extends Component {
                                 keyExtractor={this._keyExtractor}   
                             />
 
-                    </ViewTest>
+                    </ViewFlatList>
                 </BodyView>
             </BackgroundView>
         )

@@ -26,7 +26,7 @@ flexShrink:0;
 borderWidth: 1;
 borderColor: black;
 borderRadius: 5;
-marginBottom: 10;
+marginBottom: 5;
 `
 
 const TextViewOnImageBottom = styled.View `

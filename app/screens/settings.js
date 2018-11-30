@@ -18,7 +18,7 @@ const ButtonDisconnect = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
 height: 40;
-backgroundColor: red;
+backgroundColor: #e85693;
 borderColor:red;
 borderRadius:10;
 borderWidth: 1;

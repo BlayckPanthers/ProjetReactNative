@@ -19,7 +19,8 @@ const ButtonTouchableOpacity = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
 height: 40;
-borderColor: black;
+backgroundColor: #e85693;
+borderColor: #e85693;
 borderRadius:10;
 borderWidth: 1;
 `
@@ -27,6 +28,7 @@ borderWidth: 1;
 const TouchableText = styled.Text `
 textAlign: center;
 marginTop: 10;
+color: #FFFFFF;
 fontSize: 13;
 `
 
@@ -95,7 +97,6 @@ class RegisterScreen extends Component {
         return (
             <BackgroundView>
                 <CenterView>
-                    <Text>Register</Text>
                     <InputTextStyled placeholder='Email' onChangeText={email => this.onChangeMailInput(email)}/>
                     <InputTextStyled placeholder='Username' onChangeText={username => this.onChangeUserNameInput(username)}/>
                     <InputTextStyled secureTextEntry={true} placeholder='Password' onChangeText={password => this.onChangePassWordInput(password)}/>

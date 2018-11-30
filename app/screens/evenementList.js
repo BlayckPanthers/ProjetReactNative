@@ -1,9 +1,8 @@
 //import liraries
 import React, { Component } from 'react'
 import { Alert} from 'react-native'
-import PropTypes from 'prop-types'
-
 import Dialog, { DialogContent, DialogTitle } from 'react-native-popup-dialog'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import Evenement from '../components/evenement'
@@ -27,16 +26,18 @@ marginTop: 30px;
 `
 
 const ButtonTouchableOpacity = styled.TouchableOpacity `
+backgroundColor: #e85693;
 width: 70%;
 marginBottom: 10;
 height: 40;
-borderColor: black;
+borderColor: #e85693;
 borderRadius:10;
 borderWidth: 1;
 `
 
 
 const TouchableText = styled.Text `
+color: #FFFFFF;
 textAlign: center;
 marginTop: 10;
 fontSize: 13;
@@ -47,13 +48,16 @@ textAlign: center;
 width: 100%;
 marginBottom: 7;
 height: 40;
+color: #FFFFFF;
 borderRadius: 5;
 borderWidth: 3;
 fontSize: 13;
 `
 
 const FlatList = styled.FlatList`
-flex: 1;
+flex:1;
+
+margin: 5px;
 `
 
 const TopViewHead = styled.View `
@@ -73,10 +77,14 @@ const ButtonAdd = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
 height: 40;
-backgroundColor: green;
-borderColor:green;
+backgroundColor: #e85693;
+borderColor:#e85693;
 borderRadius:10;
 borderWidth: 1;
+`
+
+const TextButtonAdd = styled.Text `
+color: #FFFFFF;
 `
 
 const ViewButtonAdd = styled.View `
@@ -89,24 +97,19 @@ alignItems:center;
 const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
-backgroundColor: yellow;
+backgroundColor: #515151;
 `
 
 const BodyView = styled.View`
 flex: 5;
-backgroundColor: green;
+backgroundColor: silver;
 alignItems:center;
 `
 
-const ViewTest = styled.View`
+const ViewFlatList = styled.View`
 flex:1;
 width: 80%;
 `
-
-const Text = styled.Text``
-
-
-
 // create a component
 class EvenementScreen extends Component {
     static propTypes = {
@@ -192,14 +195,15 @@ class EvenementScreen extends Component {
                                 <ImageViewHead
                                     source= {boutonPlus}
                                 />
-                                <Text>Proposez un evenement</Text>
+                                <TextButtonAdd>Proposez un evenement</TextButtonAdd>
                             </ViewButtonAdd>
                         </ButtonAdd>
                     </TopViewHead>    
                 </TopView>
                 <BodyView>
-                    <ViewTest>
+                    <ViewFlatList>
                                 <FlatList
+
                                     data={[
                                         {eventName: 'Tournoi 5V5', 'totalNumber': 20, 'actualNumber':12, 'img':CsgoImage, 'dateEvent':'15-05-2018 - 19H'}, 
                                         {eventName: 'ARAM', 'totalNumber': 5, 'actualNumber':2, 'img':LolImage, 'dateEvent':'15-05-2018 - 23H'},
@@ -218,15 +222,16 @@ class EvenementScreen extends Component {
                                     renderItem={this._renderItem}
                                     keyExtractor={this._keyExtractor}
                                 />
-                    </ViewTest>
+                    </ViewFlatList>
                 </BodyView>
                 <Dialog
                     visible={this.state.visible}
                     onTouchOutside={() => {
                     this.setState({ visible: false })
                     }}
-                    dialogTitle={<DialogTitle title="Créer un évènement" />}
+                    dialogTitle={<DialogTitle  title="Créer un évènement"  />}
                     width={0.9}
+                    backgroundColor= 'silver'
                 >
                     <DialogContent>
                         <InputTextDialogStyled placeholder='Event name' onChangeText={eventName => this.onChangeEventNameInput(eventName)}/>
@@ -239,7 +244,7 @@ class EvenementScreen extends Component {
                         </ButtonTouchableOpacity>
                         </CenterView>
                     </DialogContent>
-                </Dialog>
+                </Dialog>          
             </BackgroundView>
         )
     }

@@ -119,9 +119,9 @@ export const AppStack = createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: 'black',
+      activeTintColor: '#FFFFFF',
       inactiveTintColor: 'gray',
-      activeBackgroundColor: 'gray'
+      activeBackgroundColor: '#e85693',
     }
   }  
 )

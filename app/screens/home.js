@@ -4,7 +4,6 @@ import {AsyncStorage, TouchableOpacity} from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-
 import PlatformGame from '../components/platformGame'
 
 import iconProfil from '../static/images/icons/profile.png'
@@ -13,12 +12,12 @@ import iconMyGroups from '../static/images/icons/groups.png'
 
 const TopView = styled.View`
 flex: 3;
-backgroundColor: yellow;
+backgroundColor: #515151;
 `
 
 const BodyView = styled.View`
 flex: 4;
-
+backgroundColor: silver;
 `
 
 const BackgroundView = styled.View`
@@ -26,9 +25,9 @@ flex: 1;
 `
 
 const ImageProfile = styled.Image `
+borderColor: black;
 width: 130px;
 height: 130px;
-borderColor: black;
 borderRadius: 65;
 borderWidth: 1;
 `
@@ -92,7 +91,7 @@ class HomeScreen extends Component {
                     </TopViewHead>
                     <TopViewCenter>
                         <ImageProfile  source={iconProfil} />
-                        <Text>Monster Creator XXX</Text>
+                        <Text style={{color: '#FFFFFF'}} >Monster Creator XXX</Text>
                     </TopViewCenter>
                     </TopView>
                 <BodyView>

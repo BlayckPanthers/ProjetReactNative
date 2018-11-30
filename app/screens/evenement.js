@@ -1,6 +1,5 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -9,11 +8,14 @@ flex: 1;
 `
 
 const EventTitle = styled.Text`
-justifyContent: center;
 text-align: center;
+alignItems: center;
+justifyContent: center;
 font-weight: 500;
-backgroundColor: #000000;
+font-size: 25px;
 color: #FFFFFF;
+margin-bottom: 10px;
+margin-top: 10px;
 `
 
 const User = styled.Text`
@@ -41,9 +43,9 @@ justifyContent: space-between;
 `
 
 export const ImageViewHead = styled.Image`
-width: 22%;
-height: 100%;
-borderRadius: 100;
+width: 75px;
+height: 75px;
+borderRadius: 37.5;
 borderWidth: 2;
 borderColor: black;
 justifyContent: flex-start;
@@ -53,7 +55,7 @@ const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
 flexDirection: row;
-backgroundColor: #4169e1;
+backgroundColor: #515151;
 justifyContent: space-between;
 `
 export const ViewHead = styled.View `
@@ -68,7 +70,7 @@ const Gamers = styled.Text`
 justifyContent: flex-end;
 font-weight: 500;
 font-size: 15px;
-color: #000000;
+color: #FFFFFF;
 margin-top: 10px;
 `
 
@@ -90,7 +92,7 @@ class EvenementScreen extends Component {
             <BackgroundView>
                 <TopView>
                     <ImageViewHead source={gameImg} />
-                    <User>{eventName}</User>
+                    <EventTitle>{eventName}</EventTitle>
                     <Gamers>{actualNumber}/{maxNumber}</Gamers>
                 </TopView>
                 <BodyView>
