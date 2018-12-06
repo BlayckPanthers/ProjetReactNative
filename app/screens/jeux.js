@@ -18,7 +18,7 @@ margin: 5px;
 const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
-backgroundColor: #515151;
+backgroundColor: ${props => props.theme.color.second};
 `
 
 const BodyView = styled.View`

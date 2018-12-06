@@ -22,6 +22,10 @@ borderRadius:10;
 borderWidth: 1;
 `
 
+const Touche = styled.TouchableOpacity`
+flex:1;
+`
+
 const ViewButtonAdd = styled.View `
 flex: 1;
 flexDirection: row;
@@ -54,6 +58,7 @@ class platformGame extends Component {
         return (
 
                 <ButtonAdd backColor={plateforme}>
+                    <Touche>
                     <ViewButtonAdd>
                         <ViewCustom>
                             <ImageViewHead source={img}/>
@@ -61,6 +66,8 @@ class platformGame extends Component {
                             <TextBar> {gamerTag} </TextBar>
                         </ViewCustom>
                     </ViewButtonAdd>
+
+                    </Touche>
                 </ButtonAdd>
 
         )

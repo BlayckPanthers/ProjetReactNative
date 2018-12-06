@@ -26,18 +26,18 @@ marginTop: 30px;
 `
 
 const ButtonTouchableOpacity = styled.TouchableOpacity `
-backgroundColor: #e85693;
+backgroundColor: ${props => props.theme.color.first};
 width: 70%;
 marginBottom: 10;
 height: 40;
-borderColor: #e85693;
+borderColor: ${props => props.theme.color.first};
 borderRadius:10;
 borderWidth: 1;
 `
 
 
 const TouchableText = styled.Text `
-color: #FFFFFF;
+color: ${props => props.theme.color.third};
 textAlign: center;
 marginTop: 10;
 fontSize: 13;
@@ -48,7 +48,7 @@ textAlign: center;
 width: 100%;
 marginBottom: 7;
 height: 40;
-color: #FFFFFF;
+color: ${props => props.theme.color.third};
 borderRadius: 5;
 borderWidth: 3;
 fontSize: 13;
@@ -77,14 +77,14 @@ const ButtonAdd = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
 height: 40;
-backgroundColor: #e85693;
-borderColor:#e85693;
+backgroundColor: ${props => props.theme.color.first};
+borderColor:${props => props.theme.color.first};
 borderRadius:10;
 borderWidth: 1;
 `
 
 const TextButtonAdd = styled.Text `
-color: #FFFFFF;
+color: ${props => props.theme.color.third};
 `
 
 const ViewButtonAdd = styled.View `
@@ -97,7 +97,7 @@ alignItems:center;
 const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
-backgroundColor: #515151;
+backgroundColor: ${props => props.theme.color.second};
 `
 
 const BodyView = styled.View`
@@ -198,7 +198,7 @@ class EvenementScreen extends Component {
                                 <TextButtonAdd>Proposez un evenement</TextButtonAdd>
                             </ViewButtonAdd>
                         </ButtonAdd>
-                    </TopViewHead>    
+                    </TopViewHead>
                 </TopView>
                 <BodyView>
                     <ViewFlatList>

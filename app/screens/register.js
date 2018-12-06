@@ -19,8 +19,8 @@ const ButtonTouchableOpacity = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
 height: 40;
-backgroundColor: #e85693;
-borderColor: #e85693;
+backgroundColor: ${props => props.theme.color.first};
+borderColor: ${props => props.theme.color.first};
 borderRadius:10;
 borderWidth: 1;
 `
@@ -28,7 +28,7 @@ borderWidth: 1;
 const TouchableText = styled.Text `
 textAlign: center;
 marginTop: 10;
-color: #FFFFFF;
+color: ${props => props.theme.color.third};
 fontSize: 13;
 `
 

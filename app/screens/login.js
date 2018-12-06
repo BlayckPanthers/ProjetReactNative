@@ -1,4 +1,5 @@
 //import liraries
+
 import React, { Component } from 'react'
 import { View, AsyncStorage} from 'react-native'
 import PropTypes from 'prop-types'
@@ -19,8 +20,8 @@ const ButtonTouchableOpacity = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
 height: 40;
-borderColor: #e85693;
-backgroundColor: #e85693;
+borderColor: ${props => props.theme.color.first};
+backgroundColor: ${props => props.theme.color.first};
 borderRadius:10;
 borderWidth: 1;
 `
@@ -28,7 +29,7 @@ borderWidth: 1;
 const TouchableText = styled.Text `
 textAlign: center;
 marginTop: 10;
-color: #FFFFFF;
+color: ${props => props.theme.color.third};
 fontSize: 13;
 `
 
@@ -45,7 +46,7 @@ fontSize: 13;
 // create a component
 class LoginScreen extends Component {
     static propTypes = {
-        navigation: PropTypes.object
+        navigation: PropTypes.object,
     }
 
     state = {
@@ -120,6 +121,11 @@ class LoginScreen extends Component {
     }
 }
 
+// const mapStateToProps = state => {
+//     return {
+//       theme: state.themes.currentTheme
+//     }
+//   }
 
 //make this component available to the app
 export default LoginScreen

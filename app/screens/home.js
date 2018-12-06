@@ -12,7 +12,7 @@ import iconMyGroups from '../static/images/icons/groups.png'
 
 const TopView = styled.View`
 flex: 3;
-backgroundColor: #515151;
+backgroundColor: ${props => props.theme.color.second};
 `
 
 const BodyView = styled.View`

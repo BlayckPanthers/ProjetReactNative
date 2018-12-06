@@ -111,6 +111,9 @@ EventStack.navigationOptions = {
   tabBarLabel: 'Evenement',
   tabBarIcon: <Image style={{ height: 26, width: 26 }} source={logoEvent} />
 }
+
+console.log(`PROPS : ${this.props}`)
+
 export const AppStack = createBottomTabNavigator(
   {
     Home: HomeStack,
@@ -119,9 +122,9 @@ export const AppStack = createBottomTabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: '#FFFFFF',
+      activeTintColor: '#FFF',
       inactiveTintColor: 'gray',
-      activeBackgroundColor: '#e85693',
+      activeBackgroundColor: '#e69'
     }
   }  
 )

@@ -13,7 +13,7 @@ alignItems: center;
 justifyContent: center;
 font-weight: 500;
 font-size: 25px;
-color: #FFFFFF;
+color: ${props => props.theme.color.third};
 margin-bottom: 10px;
 margin-top: 10px;
 `
@@ -55,7 +55,7 @@ const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
 flexDirection: row;
-backgroundColor: #515151;
+backgroundColor: ${props => props.theme.color.second};
 justifyContent: space-between;
 `
 export const ViewHead = styled.View `
@@ -70,7 +70,7 @@ const Gamers = styled.Text`
 justifyContent: flex-end;
 font-weight: 500;
 font-size: 15px;
-color: #FFFFFF;
+color: ${props => props.theme.color.third};
 margin-top: 10px;
 `
 
