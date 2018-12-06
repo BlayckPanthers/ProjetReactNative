@@ -26,18 +26,18 @@ marginTop: 30px;
 `
 
 const ButtonTouchableOpacity = styled.TouchableOpacity `
-backgroundColor: ${props => props.theme.color.first};
+backgroundColor: #E69;
 width: 70%;
 marginBottom: 10;
 height: 40;
-borderColor: ${props => props.theme.color.first};
+borderColor: #E69;
 borderRadius:10;
 borderWidth: 1;
 `
 
 
 const TouchableText = styled.Text `
-color: ${props => props.theme.color.third};
+color: #FFF;
 textAlign: center;
 marginTop: 10;
 fontSize: 13;
@@ -48,7 +48,7 @@ textAlign: center;
 width: 100%;
 marginBottom: 7;
 height: 40;
-color: ${props => props.theme.color.third};
+color: #FFF;
 borderRadius: 5;
 borderWidth: 3;
 fontSize: 13;
