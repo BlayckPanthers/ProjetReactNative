@@ -21,6 +21,7 @@ const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
 backgroundColor: ${props => props.theme.color.second};
+paddingTop:16px;
 `
 
 const TopViewHead = styled.View `
@@ -49,7 +50,8 @@ alignItems:center;
 
 const ViewFlatList = styled.View`
 flex:1;
-width: 80%;
+width: 98%;
+paddingTop:8px;
 `
 const FlatList = styled.FlatList`
 flex:1;
