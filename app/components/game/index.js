@@ -30,7 +30,7 @@ marginBottom:10;
 `
 
 // create a component
-class jeux extends Component {
+class Game extends Component {
     static propTypes = {
         GameName: PropTypes.string,
         TotalNumberEvent: PropTypes.number,
@@ -58,4 +58,4 @@ class jeux extends Component {
 
 
 //make this component available to the app
-export default jeux
+export default Game

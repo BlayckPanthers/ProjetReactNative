@@ -1,20 +1,34 @@
 //import liraries
 import React, { Component } from 'react'
-import { Text, Alert } from 'react-native'
+import { Alert } from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {verifyMail} from '../config/tools'
+import {verifyMail} from '../utils/tools'
 
-
+// CONTAINER
 const BackgroundView = styled.View`
 flex: 1;
 `
+
+// CENTERED
 const CenterView = styled.View`
 flex: 5;
 justify-content: center;
 align-items: center;
 `
+
+// FORM
+const InputTextStyled = styled.TextInput `
+textAlign: center;
+width: 70%;
+marginBottom: 7;
+height: 40;
+borderRadius: 5;
+borderWidth: 3;
+fontSize: 13;
+`
+
 const ButtonTouchableOpacity = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
@@ -32,15 +46,6 @@ color: ${props => props.theme.color.third};
 fontSize: 13;
 `
 
-const InputTextStyled = styled.TextInput `
-textAlign: center;
-width: 70%;
-marginBottom: 7;
-height: 40;
-borderRadius: 5;
-borderWidth: 3;
-fontSize: 13;
-`
 
 // create a component
 class RegisterScreen extends Component {
@@ -69,16 +74,13 @@ class RegisterScreen extends Component {
     }
 
     handleRegisterButton = () => {
-        const username = this.state.username
-        const mail = this.state.mail
-        const password = this.state.password
-        const confirmPsw = this.state.confirmpassword
+        const {username,password,confirmpassword,mail} = this.state
 
-        if(username !== '' && mail !== '' && password != '' && confirmPsw !== ''){
+        if(username !== '' && mail !== '' && password != '' && confirmpassword !== ''){
             if(!verifyMail(mail)){
                 console.log('Nah good')
             }
-            if (password !== confirmPsw) {
+            if (password !== confirmpassword) {
                 console.log('Nah good PSWD different')
             }
             else {

@@ -1,4 +1,4 @@
-import { AJOUTER_JEUX } from '../actions/jeux'
+import { ADD_GAME } from '../actions/game'
 
 
 const initialState = {
@@ -6,7 +6,7 @@ const initialState = {
 }
 export default (state = initialState, action) => {
 switch (action.type) {
-    case AJOUTER_JEUX:
+    case ADD_GAME:
         return {
         ...state,
         listJeux: [...state.listJeux, action.jeux]

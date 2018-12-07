@@ -3,24 +3,24 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Jeux from '../components/jeux'
+import Game from '../components/game'
 
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 
+// CONTAINER
 const BackgroundView = styled.View`
 flex: 1;
 `
-const FlatList = styled.FlatList`
-flex: 1;
-margin: 5px;
-`
+
+// TOP
 const TopView = styled.View`
 flex: 1;
 flex-grow: 1;
 backgroundColor: ${props => props.theme.color.second};
 `
 
+// BODY
 const BodyView = styled.View`
 flex: 5;
 backgroundColor: silver;
@@ -31,8 +31,15 @@ flex:1;
 width: 80%;
 `
 
+const FlatList = styled.FlatList`
+flex: 1;
+margin: 5px;
+`
+
+
+
 // create a component
-class JeuxScreen extends Component {
+class GameScreen extends Component {
     static propTypes = {
         navigation: PropTypes.object
     }
@@ -40,7 +47,7 @@ class JeuxScreen extends Component {
     _keyExtractor = (item) => item.id;
 
     _renderItem = ({item}) => (
-        <Jeux SourceImage={item.img} GameName={item.gameName} TotalNumberEvent={item.totalNumber} />
+        <Game SourceImage={item.img} GameName={item.gameName} TotalNumberEvent={item.totalNumber} />
 
     )
 
@@ -69,4 +76,4 @@ class JeuxScreen extends Component {
 }
 
 //make this component available to the app
-export default JeuxScreen
+export default GameScreen

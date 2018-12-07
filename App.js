@@ -20,7 +20,7 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
         <ThemeProvider theme={connectedTheme.themes.currentTheme}>
-          <RouteNav theme="HELLO" />
+          <RouteNav />
         </ThemeProvider>
       </Provider>
     )

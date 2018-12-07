@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react'
-import {AsyncStorage, TouchableOpacity} from 'react-native'
+import {AsyncStorage} from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
@@ -10,18 +10,40 @@ import iconProfil from '../static/images/icons/profile.png'
 import iconSetting from '../static/images/icons/setting.png'
 import iconMyGroups from '../static/images/icons/groups.png'
 
+// CONTAINER
+const BackgroundView = styled.View`
+flex: 1;
+`
+
+// TOP
 const TopView = styled.View`
 flex: 3;
 backgroundColor: ${props => props.theme.color.second};
 `
 
-const BodyView = styled.View`
-flex: 4;
-backgroundColor: silver;
+const TopViewHead = styled.View `
+flex: 1;
+marginTop:25;
+flexDirection: row;
+justifyContent: space-between;
+`
+const HeadLeftIconTouchable = styled.TouchableOpacity `
+marginLeft: 2%;
 `
 
-const BackgroundView = styled.View`
-flex: 1;
+const HeadRigthIconTouchable = styled.TouchableOpacity `
+marginLeft: 2%;
+`
+
+const ImageViewHead = styled.Image`
+width: 26px;
+height: 26px;
+`
+
+const TopViewCenter = styled.View `
+flex: 5;
+justify-content: center;
+align-items: center;
 `
 
 const ImageProfile = styled.Image `
@@ -31,26 +53,13 @@ height: 130px;
 borderRadius: 65;
 borderWidth: 1;
 `
-
-const ImageViewHead = styled.Image`
-width: 26px;
-height: 26px;
-
-`
-
-const TopViewCenter = styled.View `
-flex: 5;
-justify-content: center;
-align-items: center;
-`
-
-const TopViewHead = styled.View `
-flex: 1;
-marginTop:25;
-flexDirection: row;
-justifyContent: space-between;
-`
 const Text = styled.Text``
+
+// BODY
+const BodyView = styled.View`
+flex: 4;
+backgroundColor: silver;
+`
 
 const CenterView = styled.View`
 flex: 1;
@@ -86,8 +95,8 @@ class HomeScreen extends Component {
             <BackgroundView>
                 <TopView>
                     <TopViewHead>
-                        <TouchableOpacity style={{marginLeft:'2%'}} onPress={this._handleMyEvents}><ImageViewHead source={iconMyGroups}/></TouchableOpacity>
-                        <TouchableOpacity style={{marginRight:'2%'}} onPress={this._handleSettings}><ImageViewHead  source={iconSetting}/></TouchableOpacity>
+                        <HeadLeftIconTouchable style={{marginLeft:'2%'}} onPress={this._handleMyEvents}><ImageViewHead source={iconMyGroups}/></HeadLeftIconTouchable>
+                        <HeadRigthIconTouchable style={{marginRight:'2%'}} onPress={this._handleSettings}><ImageViewHead  source={iconSetting}/></HeadRigthIconTouchable>
                     </TopViewHead>
                     <TopViewCenter>
                         <ImageProfile  source={iconProfil} />

@@ -84,18 +84,17 @@ class SettingsScreen extends Component {
 //make this component available to the app
 const mapStateToProps = state => {
     return {
-      themes: state.themes.currentTheme
+        themes: state.themes.currentTheme
     }
-  }
-  
-  const mapDispatchToProps = dispatch => ({
+}
+
+const mapDispatchToProps = dispatch => ({
     actions: {
-      themes: bindActionCreators(allTheActions.themes, dispatch)
+        themes: bindActionCreators(allTheActions.themes, dispatch)
     }
-  })
-  
-  export default connect(
+})
+
+export default connect(
     mapStateToProps,
     mapDispatchToProps
-  )(SettingsScreen)
-  
+)(SettingsScreen)

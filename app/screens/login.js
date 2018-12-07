@@ -1,21 +1,35 @@
 //import liraries
 
 import React, { Component } from 'react'
-import { View, AsyncStorage} from 'react-native'
+import { AsyncStorage} from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import {verifyMail} from '../config/tools'
+import {verifyMail} from '../utils/tools'
 
+// CONTAINER
 const BackgroundView = styled.View`
 flex: 1;
 `
+
+// CENTERED
 const CenterView = styled.View`
 flex: 5;
 justify-content: center;
 align-items: center;
-
 `
+
+// FORM
+const InputTextStyled = styled.TextInput `
+textAlign: center;
+width: 70%;
+marginBottom: 7;
+height: 40;
+borderRadius: 5;
+borderWidth: 3;
+fontSize: 13;
+`
+
 const ButtonTouchableOpacity = styled.TouchableOpacity `
 width: 70%;
 marginBottom: 10;
@@ -33,14 +47,10 @@ color: ${props => props.theme.color.third};
 fontSize: 13;
 `
 
-const InputTextStyled = styled.TextInput `
-textAlign: center;
+const Trait = styled.View `
 width: 70%;
-marginBottom: 7;
-height: 40;
-borderRadius: 5;
-borderWidth: 3;
-fontSize: 13;
+borderBottomColor: black;
+borderBottomWidth: 1;
 `
 
 // create a component
@@ -50,7 +60,6 @@ class LoginScreen extends Component {
     }
 
     state = {
-        isLoggedIn: false,
         mail: '',
         password: ''
     }
@@ -73,9 +82,7 @@ class LoginScreen extends Component {
     }
 
     handleLoginButton = async() => {
-        const mail = this.state.mail
-        const password = this.state.password
-
+        const {mail,password} = this.state
         await AsyncStorage.setItem('userToken', 'abc')
         // if(mail !== '' && !password !== ''){
         //     if(!verifyMail(mail)){
@@ -95,23 +102,13 @@ class LoginScreen extends Component {
         return (
             <BackgroundView>
                 <CenterView>
-                    {/* <ParameterTouchableOpacity onPress={this.handleHomeButtonPress}>
-                        <Text>Go Home</Text>
-                    </ParameterTouchableOpacity> */}
-                        
                     <InputTextStyled placeholder='e-mail' onChangeText={mail => this.onChangeUserNameInput(mail)}/>
                     <InputTextStyled secureTextEntry={true} placeholder='Password' onChangeText={password => this.onChangePassWordInput(password)}/>
                     <ButtonTouchableOpacity onPress={this.handleLoginButton}title="Submit">
                         <TouchableText>Submit</TouchableText>
                     </ButtonTouchableOpacity>
                     <TouchableText style={{color: 'black'}}> New to EazyLevel ? </TouchableText>
-                    <View
-                        style={{
-                            width: '70%',
-                            borderBottomColor: 'black',
-                            borderBottomWidth: 1,
-                        }}
-                        />
+                    <Trait/>
                     <ButtonTouchableOpacity onPress={this.handleRegisterLinkButton}>
                         <TouchableText>Create your EazyLevel Account</TouchableText>
                     </ButtonTouchableOpacity>
@@ -120,12 +117,5 @@ class LoginScreen extends Component {
         )
     }
 }
-
-// const mapStateToProps = state => {
-//     return {
-//       theme: state.themes.currentTheme
-//     }
-//   }
-
 //make this component available to the app
 export default LoginScreen

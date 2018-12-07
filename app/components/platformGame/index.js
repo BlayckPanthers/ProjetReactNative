@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'proptypes'
 
-import iconPlay from '../../static/images/icons/PSN.png'
+import iconPlay from '../../static/images/icons/psn.png'
 import iconXbox from '../../static/images/icons/xbox.png'
 import iconSteam from '../../static/images/icons/steam.png'
 

@@ -36,7 +36,7 @@ justifyContent: flex-end;
 `
 
 // create a component
-class Evenement extends Component {
+class Event extends Component {
     static propTypes = {
         EventName: PropTypes.string,
         TotalNumberEvent: PropTypes.number,
@@ -71,4 +71,4 @@ class Evenement extends Component {
 
 
 //make this component available to the app
-export default Evenement
+export default Event

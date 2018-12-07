@@ -5,16 +5,58 @@ import Dialog, { DialogContent, DialogTitle } from 'react-native-popup-dialog'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Evenement from '../components/evenement'
+import Event from '../components/event'
 
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 import boutonPlus from '../static/images/icons/eventAdd.png'
 
+// CONTAINER
 const BackgroundView = styled.View`
 flex: 1;
 `
 
+//TOP
+const TopView = styled.View`
+flex: 1;
+flex-grow: 1;
+backgroundColor: ${props => props.theme.color.second};
+`
+
+const TopViewHead = styled.View `
+flex: 1;
+marginTop:25;
+flexDirection: row;
+justifyContent: center;
+`
+
+const ButtonAdd = styled.TouchableOpacity `
+width: 70%;
+marginBottom: 10;
+height: 40;
+backgroundColor: ${props => props.theme.color.first};
+borderColor:${props => props.theme.color.first};
+borderRadius:10;
+borderWidth: 1;
+`
+
+//BODY
+const BodyView = styled.View`
+flex: 5;
+backgroundColor: silver;
+alignItems:center;
+`
+
+const ViewFlatList = styled.View`
+flex:1;
+width: 80%;
+`
+const FlatList = styled.FlatList`
+flex:1;
+margin: 5px;
+`
+
+// DIALOG
 const CenterView = styled.View`
 flex: 5;
 justify-content: center;
@@ -48,24 +90,12 @@ textAlign: center;
 width: 100%;
 marginBottom: 7;
 height: 40;
-color: #FFF;
+color: black;
 borderRadius: 5;
 borderWidth: 3;
 fontSize: 13;
 `
 
-const FlatList = styled.FlatList`
-flex:1;
-
-margin: 5px;
-`
-
-const TopViewHead = styled.View `
-flex: 1;
-marginTop:25;
-flexDirection: row;
-justifyContent: center;
-`
 
 const ImageViewHead = styled.Image`
 width: 26px;
@@ -73,15 +103,7 @@ height: 26px;
 `
 
 
-const ButtonAdd = styled.TouchableOpacity `
-width: 70%;
-marginBottom: 10;
-height: 40;
-backgroundColor: ${props => props.theme.color.first};
-borderColor:${props => props.theme.color.first};
-borderRadius:10;
-borderWidth: 1;
-`
+
 
 const TextButtonAdd = styled.Text `
 color: ${props => props.theme.color.third};
@@ -94,22 +116,9 @@ justifyContent:space-evenly;
 alignItems:center;
 `
 
-const TopView = styled.View`
-flex: 1;
-flex-grow: 1;
-backgroundColor: ${props => props.theme.color.second};
-`
 
-const BodyView = styled.View`
-flex: 5;
-backgroundColor: silver;
-alignItems:center;
-`
 
-const ViewFlatList = styled.View`
-flex:1;
-width: 80%;
-`
+
 // create a component
 class EvenementScreen extends Component {
     static propTypes = {
@@ -118,12 +127,12 @@ class EvenementScreen extends Component {
     }
 
     state = {
-        gameName: '',
         date: '',
         eventName: '',
         maxNumber: 0,
-        gameImg: '',
         actualNumber: 0,
+        gameImg: CsgoImage,
+        gameName: '',
         visible: false
     }
 
@@ -141,13 +150,9 @@ class EvenementScreen extends Component {
     }
 
     handleCreateEventButton = () => {
-        const date = this.state.date
-        const maxNumber = this.state.maxNumber
-        const eventName = this.state.eventName
-        const gameImg = this.state.gameImg
-        const actualNumber = this.state.actualNumber
+        const {date, eventName, maxNumber, actualNumber, gameImg} = this.state
 
-        if(date == ''|| isNaN(maxNumber) || eventName == '' ){   
+        if(date == '' || isNaN(maxNumber) || eventName == '' ){   
             Alert.alert('Error', 'Please fill all the fields')
         }
         else {
@@ -178,7 +183,7 @@ class EvenementScreen extends Component {
     }
 
     _renderItem = ({item}) => (
-        <Evenement EventName={item.eventName} TotalNumberEvent={item.totalNumber}
+        <Event EventName={item.eventName} TotalNumberEvent={item.totalNumber}
                 ActualNumberEvent={item.actualNumber} SourceImage={item.img}
                 DateEvent={item.dateEvent} OnClick={()=> this._handleClick(item.eventName,item.totalNumber, item.dateEvent, item.img, item.actualNumber, item.totalNumber)}/> 
     )

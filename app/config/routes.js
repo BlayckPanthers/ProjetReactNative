@@ -11,9 +11,9 @@ import { Image } from 'react-native'
 import Login from '../screens/login'
 import Register from '../screens/register'
 import Home from '../screens/home'
-import EvenementList from '../screens/evenementList'
-import Jeux from '../screens/jeux'
-import Evenement from '../screens/evenement'
+import EventList from '../screens/eventList'
+import Game from '../screens/game'
+import Event from '../screens/event'
 import Settings from '../screens/settings'
 import MyEvents from '../screens/myEvents'
 
@@ -54,13 +54,13 @@ const AuthStack = createStackNavigator(
 
 const EventStack = createStackNavigator({
   EvenementList: {
-    screen: EvenementList,
+    screen: EventList,
     navigationOptions: {
       header: () => null
     }
   },
   Evenement: {
-    screen: Evenement,
+    screen: Event,
     navigationOptions: {
       headerTitle: 'Evenement'
     }
@@ -90,7 +90,7 @@ const HomeStack = createStackNavigator({
 
 const JeuxStack = createStackNavigator({
   Home: {
-    screen: Jeux,
+    screen: Game,
     navigationOptions: {
       header: () => null
     }
@@ -112,7 +112,7 @@ EventStack.navigationOptions = {
   tabBarIcon: <Image style={{ height: 26, width: 26 }} source={logoEvent} />
 }
 
-console.log(`PROPS : ${this.props}`)
+
 
 export const AppStack = createBottomTabNavigator(
   {

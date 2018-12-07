@@ -1,4 +1,4 @@
-import { AJOUTER_EVENEMENT } from '../actions/evenement'
+import { ADD_EVENT } from '../actions/event'
 
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
 switch (action.type) {
-    case AJOUTER_EVENEMENT:
+    case ADD_EVENT:
         return {
         ...state,
         listEvenement: [...state.listEvenement, action.evenement]
