@@ -4,7 +4,8 @@ import React from 'react'
 import {
   createSwitchNavigator,
   createStackNavigator,
-  createBottomTabNavigator
+  createBottomTabNavigator,
+  createMaterialTopTabNavigator
 } from 'react-navigation'
 import { Image } from 'react-native'
 
@@ -16,6 +17,8 @@ import Game from '../screens/game'
 import Event from '../screens/event'
 import Settings from '../screens/settings'
 import MyEvents from '../screens/myEvents'
+import Chat from '../screens/chat'
+
 
 import AuthLoadingScreen from '../components/auth'
 
@@ -43,6 +46,27 @@ const LogStack = createStackNavigator({
   }
 })
 
+const EventTab = createMaterialTopTabNavigator(
+  {
+    Evenement: Event,
+    Chat: Chat
+  },
+  {
+    tabBarOptions: {
+      swipeEnabled: true,
+      activeTintColor: 'blue',
+      inactiveTintColor: 'grey',
+      labelStyle: {
+        fontSize: 10,
+      },
+      style: {
+        height:'6%',
+        backgroundColor: 'white',
+      },
+    }
+  }
+)
+
 const AuthStack = createStackNavigator(
   {
     Login: {
@@ -60,7 +84,7 @@ const EventStack = createStackNavigator({
     }
   },
   Evenement: {
-    screen: Event,
+    screen: EventTab,
     navigationOptions: {
       headerTitle: 'Evenement'
     }
@@ -96,6 +120,8 @@ const JeuxStack = createStackNavigator({
     }
   }
 })
+
+
 
 JeuxStack.navigationOptions = {
   tabBarLabel: 'Jeux',
