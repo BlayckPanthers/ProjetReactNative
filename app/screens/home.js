@@ -19,6 +19,9 @@ flex: 1;
 const TopView = styled.View`
 flex: 3;
 backgroundColor: ${props => props.theme.color.second};
+paddingRight:15;
+paddingLeft:15;
+paddingTop:15;
 `
 
 const TopViewHead = styled.View `
@@ -52,8 +55,10 @@ width: 130px;
 height: 130px;
 borderRadius: 65;
 borderWidth: 1;
+marginBottom:15;
 `
-const Text = styled.Text``
+const Text = styled.Text`
+marginBottom:15;`
 
 // BODY
 const BodyView = styled.View`

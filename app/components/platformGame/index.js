@@ -36,13 +36,14 @@ alignItems:center;
 const TextBar = styled.Text` 
 color:white;
 fontWeight:bold;
+marginLeft:8px;
 `
 
 const ViewCustom = styled.View`
 flex: 1;
 flexDirection:row;
 alignItems:center;
-
+padding:10px;
 `
 
 // create a component
