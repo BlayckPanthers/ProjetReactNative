@@ -63,7 +63,7 @@ class platformGame extends Component {
                     <ViewButtonAdd>
                         <ViewCustom>
                             <ImageViewHead source={img}/>
-                            <TextBar>{plateforme} ID: </TextBar>
+                            {/* <TextBar>{plateforme} ID: </TextBar>  */}
                             <TextBar> {gamerTag} </TextBar>
                         </ViewCustom>
                     </ViewButtonAdd>

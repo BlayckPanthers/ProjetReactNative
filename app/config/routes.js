@@ -92,6 +92,7 @@ const EventStack = createStackNavigator({
 })
 
 const HomeStack = createStackNavigator({
+  
   Home: {
     screen: Home,
     navigationOptions: {

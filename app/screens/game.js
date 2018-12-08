@@ -14,9 +14,10 @@ flex: 1;
 `
 
 // TOP
+// flex: 1;
+// flex-grow: 1;
 const TopView = styled.View`
-flex: 1;
-flex-grow: 1;
+height:50px;
 backgroundColor: ${props => props.theme.color.second};
 `
 
