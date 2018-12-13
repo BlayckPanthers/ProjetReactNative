@@ -10,6 +10,7 @@ import Event from '../components/event'
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 import boutonPlus from '../static/images/icons/eventAdd.png'
+import { ScrollView } from 'react-native-gesture-handler';
 
 // CONTAINER
 const BackgroundView = styled.View`
@@ -54,8 +55,7 @@ width: 98%;
 paddingTop:8px;
 `
 const FlatList = styled.FlatList`
-flex:1;
-margin: 5px;
+
 `
 
 // DIALOG
@@ -209,7 +209,8 @@ class EvenementScreen extends Component {
                 </TopView>
                 <BodyView>
                     <ViewFlatList>
-                                <FlatList
+
+                            <FlatList
 
                                     data={[
                                         {eventName: 'Tournoi 5V5', 'totalNumber': 20, 'actualNumber':12, 'img':CsgoImage, 'dateEvent':'15-05-2018 - 19H'}, 
@@ -229,6 +230,8 @@ class EvenementScreen extends Component {
                                     renderItem={this._renderItem}
                                     keyExtractor={this._keyExtractor}
                                 />
+
+                                
                     </ViewFlatList>
                 </BodyView>
                 <Dialog

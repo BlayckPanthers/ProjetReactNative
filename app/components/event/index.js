@@ -1,39 +1,9 @@
 //import liraries
 import React, { Component } from 'react'
-import { View ,ImageBackground, TouchableOpacity } from 'react-native'
-import styled from 'styled-components'
+import { Image, TouchableOpacity } from 'react-native'
+import { Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base'
 
 import PropTypes from 'proptypes'
-
-const GameName = styled.Text `
-height: 40%; 
-color: white;
-fontWeight: bold;
-backgroundColor: black;
-`
-
-const TextViewOnImage = styled.View `
-flex: 1;
-height: 15%;
-flexDirection: row;
-justifyContent: space-between;
-`
-
-const CardView = styled.View `
-width: 100%;
-minHeight: 15%;
-flexShrink:0;
-borderWidth: 1;
-borderColor: black;
-borderRadius: 5;
-marginBottom: 5;
-`
-
-const TextViewOnImageBottom = styled.View `
-flex: 1;
-flexDirection: column;
-justifyContent: flex-end;
-`
 
 // create a component
 class Event extends Component {
@@ -50,21 +20,38 @@ class Event extends Component {
 
     render() {
         return (
-            <CardView>
-                <TouchableOpacity style={{flex: 1}} onPress={this.props.OnClick}>
-                    <View style={{flex:1}}>
-                        <ImageBackground source={this.props.SourceImage} style={{flex: 1,width: '100%', resizeMode:'contain'}} >
-                            <TextViewOnImage>
-                                    <GameName >{this.props.EventName}</GameName>
-                                    <GameName >{this.props.ActualNumberEvent}/{this.props.TotalNumberEvent}</GameName>
-                            </TextViewOnImage>
-                            <TextViewOnImageBottom>
-                                    <GameName style={{textAlignVertical: 'center',textAlign: 'center'}}>{this.props.DateEvent}</GameName>
-                            </TextViewOnImageBottom>
-                        </ImageBackground>
-                    </View>
-                </TouchableOpacity>
-            </CardView>
+                
+                    <Card>
+                        <TouchableOpacity style ={{flex: 1 }} onPress={this.props.OnClick}>
+                            <CardItem header bordered>
+                                <Left>
+                                    <Thumbnail style={{marginTop: 5}} source={this.props.SourceImage} />
+                                    <Body>
+                                    <Text>{this.props.EventName}</Text>
+                                    <Text note>Game name</Text>
+                                    </Body>
+                                </Left>
+                            </CardItem>
+                            <CardItem cardBody>
+                                {/* <Image source={this.props.SourceImage} style={{height: 200, width: null, flex: 1}}/> */}
+                                </CardItem>
+                            <CardItem footer bordered>
+                                <Left>
+                                    <Button transparent>
+                                    <Icon active name="md-contact" />
+                                    <Text>{this.props.ActualNumberEvent} / {this.props.TotalNumberEvent} </Text>
+                                    </Button>
+                                    <Text>{this.props.DateEvent}</Text>
+                                </Left>
+                                <Right>
+                                    
+                                </Right>
+                        </CardItem>
+                        </TouchableOpacity>
+                        
+                    </Card>
+
+
         )
     }
 }
