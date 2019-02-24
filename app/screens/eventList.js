@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Alert} from 'react-native'
 import Dialog, { DialogContent, DialogTitle } from 'react-native-popup-dialog'
 import PropTypes from 'prop-types'
+import {Picker ,Icon} from 'native-base'
 import styled from 'styled-components'
 
 import Event from '../components/event'
@@ -10,7 +11,7 @@ import Event from '../components/event'
 import CsgoImage from '../static/images/csgo.jpg'
 import LolImage from '../static/images/lol.jpg'
 import boutonPlus from '../static/images/icons/eventAdd.png'
-import { ScrollView } from 'react-native-gesture-handler';
+
 
 // CONTAINER
 const BackgroundView = styled.View`
@@ -135,6 +136,7 @@ class EvenementScreen extends Component {
         actualNumber: 0,
         gameImg: CsgoImage,
         gameName: '',
+        selected: 'key1',
         visible: false
     }
 
@@ -150,6 +152,14 @@ class EvenementScreen extends Component {
     onChangeDateInput = date => {
         this.setState({date: date})
     }
+
+    onPickerChange = value => {
+        this.setState({
+            selected: value
+        })
+    }
+        
+    
 
     handleCreateEventButton = () => {
         const {date, eventName, maxNumber, actualNumber, gameImg} = this.state
@@ -244,6 +254,20 @@ class EvenementScreen extends Component {
                     backgroundColor= 'silver'
                 >
                     <DialogContent>
+                        <Picker note
+                        iosIcon={<Icon name="ios-arrow-down-outline" />}
+                        placeholder="Choisissez un jeux"
+                        mode="dropdown"
+                        style={{ width: 120 }}
+                        selectedValue={this.state.selected}
+                        onValueChange={this.onPickerChange.bind(this)}
+                        >
+                            <Picker.Item label="LOL" value="key0"/>
+                            <Picker.Item label="Fortnite" value="key1" />
+                            <Picker.Item label="CSGO" value="key2" />
+                            <Picker.Item label="Call of duty" value="key3" />
+                            <Picker.Item label="Fifa 19" value="key4" />
+                        </Picker>
                         <InputTextDialogStyled placeholder='Event name' onChangeText={eventName => this.onChangeEventNameInput(eventName)}/>
                         <InputTextDialogStyled placeholder='Player max number' onChangeText={maxNumber => this.onChangeMaxNumberInput(maxNumber)}/>
                         <InputTextDialogStyled placeholder='Date' onChangeText={date => this.onChangeDateInput(date)}/>
